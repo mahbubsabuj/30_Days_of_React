@@ -1,6 +1,6 @@
 # 30_Days_of_React
 
-# This is my attempt to learn react basics in 30 days. i will update my progess in daily basis for next 30 days. 
+# This is my attempt to learn react basics in 30 days. i will update my progess on daily basis for next 30 days in here. 
 
 # Day 1
 <ul>
