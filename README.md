@@ -9,11 +9,12 @@
   <li> Class Components </li>
   <li> Reusable Components </li>
   <li> State </li>
+  <li> Manage state using Class Component </li>
 </ul>
 
 # Day 2
 <ul>
   <li> Functional Components </li>
-  <li> Basics of React 2 hooks (Usestate, useEffect} </li>
+  <li> Basics of React 2 hooks (UseState, useEffect} </li>
   <li> HTML Stuffs </li>
 </ul>
