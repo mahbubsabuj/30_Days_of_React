@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+}
+.main-container {
+  align-items: center;
+  justify-content: center;
+}
+.grid-container {
+  padding: 40px;
+  margin: 30px;
+  display: grid;
+  grid-template-columns: 1.5fr 0.5fr 1fr 1fr 1fr;
+  column-gap: 5px;
+}
+
+.btn {
+  height: 30px;
+  border: none;
+  color: white;
+  background-color: #FF1E42;
+  border-radius: 5px;
+}
+
+.input-field {
+  border: none;
+  color: white;
+  background-color: #0A2044;
+  border-bottom: 2px solid white;
+  outline: none;
+  /* transition: 0.4s ease-in-out; */
+}
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* On mouse-over, add a deeper shadow */
+
+/* Add some padding inside the card container */
+.container {
+  margin-left: 100px;
+  height: 300px;
+  width: 250px;
+  background-color: white;
+  border-radius: 5px;
+  justify-content: center;
+  text-align: center;
+  padding: 2px 16px;
+}
