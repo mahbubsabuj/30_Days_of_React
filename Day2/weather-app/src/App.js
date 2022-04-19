@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState } from "react";
 function App() {
-  const apiKey = "0a6c162f56624be59a881437221704";
+  const apiKey = "YOUR API KEY"; // you can get it from here https://www.weatherapi.com/
   const [location, changeLocation] = useState("dhaka");
   const [errorMessage, changeErrorMessage] = useState(null);
   const [weatherDetails, changeWeatherDetails] = useState({cityName: null, countryName: null, temperature: null});
