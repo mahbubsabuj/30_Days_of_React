@@ -9,7 +9,7 @@
   <li> Class Components </li>
   <li> Reusable Components </li>
   <li> State </li>
-  <li> Manage state using Class Component </li>
+  <li> Manage states using Class Component </li>
 </ul>
 
 # Day 2
