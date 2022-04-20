@@ -1,0 +1,22 @@
+.input-container {
+  margin: auto;
+  width: 20%;
+  padding: 10px;
+}
+
+.input {
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  padding-top: 20px;
+
+  width: 250px;
+  height: 30px;
+  border: none;
+  border-bottom: 2px solid yellowgreen;
+  outline: none;
+}
+*::placeholder {
+    /* modern browser */
+    color: black;
+}

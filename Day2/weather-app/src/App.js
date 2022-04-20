@@ -2,12 +2,16 @@ import "./App.css";
 import React, { useState } from "react";
 function App() {
   const apiKey = "YOUR API KEY"; // you can get it from here https://www.weatherapi.com/
-  const [location, changeLocation] = useState("dhaka");
-  const [errorMessage, changeErrorMessage] = useState(null);
-  const [weatherDetails, changeWeatherDetails] = useState({cityName: null, countryName: null, temperature: null});
+  const [location, setLocation] = useState("dhaka");
+  const [errorMessage, setErrorMessage] = useState(null);
+  const [weatherDetails, setWeatherDetails] = useState({
+    cityName: null,
+    countryName: null,
+    temperature: null,
+  });
   const handleChange = (event) => {
     event.preventDefault();
-    changeLocation(event.target.value);
+    setLocation(event.target.value);
   };
   const handleClick = (event) => {
     event.preventDefault();
@@ -16,20 +20,21 @@ function App() {
       .then((response) => response.json())
       .then((data) => {
         if (data.error) {
-          changeErrorMessage("Please Enter a valid city/country name");
+          setErrorMessage("Please Enter a valid city/country name");
         } else {
           console.log(data.location.name);
           const weatherObject = {
             cityName: data.location.name,
             countryName: data.location.country,
-            temperature: data.current.temp_c
-          }
-          changeErrorMessage(null);
-          changeWeatherDetails(weatherObject);
+            temperature: data.current.temp_c,
+          };
+          setErrorMessage(null);
+          setWeatherDetails(weatherObject);
         }
         console.log(data);
-      }).catch((error) => {
-        changeErrorMessage("Please check your internet connection!");
+      })
+      .catch((error) => {
+        setErrorMessage("Please check your internet connection!");
       });
   };
   return (
@@ -53,13 +58,15 @@ function App() {
           width="200"
           height="150"
         /> */}
+          <h4>{errorMessage && errorMessage}</h4>
           <h4>
-            {errorMessage && errorMessage}
+            {weatherDetails.cityName && (
+              <b>{`${weatherDetails.cityName}, ${weatherDetails.countryName}`}</b>
+            )}
           </h4>
-          <h4>
-            {weatherDetails.cityName && <b>{`${weatherDetails.cityName}, ${weatherDetails.countryName}`}</b>}
-          </h4>
-          {weatherDetails.temperature && <p>Temprature: {weatherDetails.temperature}°C</p>}
+          {weatherDetails.temperature && (
+            <p>Temprature: {weatherDetails.temperature}°C</p>
+          )}
         </div>
       </div>
     </div>
