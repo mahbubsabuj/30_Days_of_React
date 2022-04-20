@@ -18,3 +18,9 @@
   <li> Basics of React 2 hooks (UseState, useEffect} </li>
   <li> HTML Stuffs (Grid Layout & Other stuffs) </li>
 </ul>
+
+# Day 3
+<ul>
+  <li> Unsplash API </li>
+  <li> axios Package </li>
+</ul>
