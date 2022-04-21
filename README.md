@@ -15,7 +15,7 @@
 # Day 2
 <ul>
   <li> Functional Components </li>
-  <li> Basics of React 2 hooks (UseState, useEffect} </li>
+  <li> Basics of React 2 hooks (UseState, useEffect) </li>
   <li> HTML Stuffs (Grid Layout & Other stuffs) </li>
 </ul>
 
