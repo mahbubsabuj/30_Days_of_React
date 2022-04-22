@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import unsplash from "../api/unsplash";
 import SearchBar from "./SearchBar";
 import ImageList from "./ImageList";
+import "./App.css";
 const App = () => {
   const [images, setImages] = useState([]);
   const handleSearchSubmit = async (query) => {
@@ -14,7 +15,7 @@ const App = () => {
     console.log(images);
   };
   return (
-    <div>
+    <div className="app_container">
       <SearchBar onSubmit={handleSearchSubmit} />
       <ImageList images={images} />
     </div>
