@@ -23,7 +23,7 @@ const App = () => {
   useEffect(() => {
     onTermSubmit('taylor swift songs');
     console.log("YES");
-  });
+  },[]);
   return (
     <div className="ui container">
       <SearchBar onFormSubmit={onTermSubmit} />
