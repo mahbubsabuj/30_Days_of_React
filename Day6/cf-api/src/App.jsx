@@ -15,24 +15,23 @@ const App = () => {
         },
       }
     );
-    console.log(response.data.result.slice(0, 10));
-    setRankList(response.data.result.slice(0, 10));
+    const results = response.data.result;
+    console.log(results.slice(0, 20));
+    setRankList(results.slice(0, 20));
   };
   const init = async () => {
     const response = await axios.get(
       "https://codeforces.com/api/contest.list?gym=false",
       {}
     );
-    const results = response.data.result;
-    for (let i = 0; i < results.length; ++i) {
-        if (results[i].phase === "FINISHED") {
-            onTermSubmit(results[i].id);
-            break;
-        }
-    }
+    const result = response.data.result.find((item) => {
+      return item.phase === "FINISHED";
+    });
+    onTermSubmit(result.id);
   };
   useEffect(() => {
-      init();
+    init();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div>
