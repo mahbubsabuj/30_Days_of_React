@@ -35,3 +35,10 @@
   <li> Youtube API </li>
   <li> Semantic UI </li>
 </ul>
+
+
+# Day 6
+<ul>
+  <li> Explored Codeforces API </li>
+  <li> Material UI Buttons, Forms, Table etc</li>
+</ul>
