@@ -43,7 +43,7 @@
   <li> Material UI Buttons, Forms, Table etc</li>
 </ul>
 
-# Day 7
+# Day 7 & 8 & 9
 <ul>
   <li> Trying to make a Codeforces Visualizer app using Codeforces Api </li>
   <li> ChartJS package </li>
