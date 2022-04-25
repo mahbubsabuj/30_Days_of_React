@@ -1,16 +1,17 @@
 import React from "react";
-import { Pie, Bar, Line, Doughnut } from "react-chartjs-2";
 import { colors } from "../utils/constants";
+import DoughnutChart from "./DoughnutChart";
 const VerdictChart = ({ submissionDetails, handle }) => {
-  console.log(submissionDetails);
-  const reduced = Object.values(
-    submissionDetails.reduce((res, { verdict }) => {
-      res[verdict] = res[verdict] || { key: verdict, count: 0 };
-      res[verdict].count++;
-      return res;
-    }, {})
+  const reduced = Object.values(submissionDetails).reduce(
+    (res, { verdict }) => {
+      {
+        res[verdict] = res[verdict] || { key: verdict, count: 0 };
+        res[verdict].count++;
+        return res;
+      }
+    },
+    {}
   );
-  console.log(colors);
   const keys = [];
   const values = [];
   Object.keys(reduced).forEach((key) => {
@@ -21,7 +22,6 @@ const VerdictChart = ({ submissionDetails, handle }) => {
     }
     values.push(reduced[key].count);
   });
-  console.log(keys.length);
   const chartData = {
     labels: keys,
     datasets: [
@@ -32,19 +32,9 @@ const VerdictChart = ({ submissionDetails, handle }) => {
       },
     ],
   };
-  return <Doughnut data={chartData} options={{
-    plugins: {
-      title: {
-        display: true,
-        text: `Verdicts of ${handle}`,
-        color:"black"
-      },
-      legend: {
-        display: true,
-        position: "bottom"
-     }
-    }
-  }}/>;
+  return (
+    <DoughnutChart chartData={chartData} title={`Submissions of ${handle}`} />
+  );
 };
 
 export default VerdictChart;
