@@ -42,3 +42,9 @@
   <li> Explored Codeforces API </li>
   <li> Material UI Buttons, Forms, Table etc</li>
 </ul>
+
+# Day 7
+<ul>
+  <li> Trying to make a Codeforces Visualizer app using Codeforces Api </li>
+  <li> ChartJS package </li>
+</ul>
