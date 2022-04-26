@@ -1,8 +1,9 @@
 import React from "react";
 
 const LevelChart = ({ submissionDetails, handle }) => {
-    
-    return <div></div>;
+  console.log(submissionDetails, "FROM LEVEL CHART");
+
+  return <div></div>;
 };
 
 export default LevelChart;

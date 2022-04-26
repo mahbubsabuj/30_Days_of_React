@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import VerdictChart from "./VerdictChart";
 import LanguagesChart from "./LanguagesChart";
+import ApexChart from "./ApexChart";
+import LevelChart from "./LevelChart";
 import fetchUserSubmissions from "../apis/fetchUserSubmissions";
 import { Box } from "@mui/system";
 import { Container, Grid } from "@mui/material";
@@ -20,7 +22,7 @@ const Item = styled(Paper)(({ theme }) => ({
 const HomePage = () => {
   const [submissionDetails, setSubmissionDetails] = useState([]);
   const [handle, setHandle] = useState("");
-
+  console.log("HELLO");
   const onTermSubmit = async (term) => {
     const response = await fetchUserSubmissions(term);
     console.log(response.data.result);
@@ -40,48 +42,58 @@ const HomePage = () => {
   };
 
   return (
-    <Box
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-    >
-      <SearchBar onTermSubmit={onTermSubmit} />
-      {submissionDetails.length !== 0 && (
-        <React.Fragment>
-          <Box sx={{ width: "90%",}}>
-            <Grid
-              container
-              rowSpacing={2}
-              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-            >
-              <Grid item xs={6}>
-                <Item elevation={24} sx={{ backgroundColor: "whitesmoke" }}>
-                  <VerdictChart
-                    submissionDetails={submissionDetails}
-                    handle={handle}
-                  />
-                </Item>
-              </Grid>
-              <Grid item xs={6}>
-                <Item elevation={24} sx={{ backgroundColor: "whitesmoke" }}>
-                  <LanguagesChart
-                    submissionDetails={submissionDetails}
-                    handle={handle}
-                  />
-                </Item>
-              </Grid>
-            </Grid>
-          </Box>
-          <Box height={10}></Box>
-          <Container sx={{ p: 2, m: 2 }}>
-            <Item elevation={24} sx={{ backgroundColor: "whitesmoke" }}>
-              <TagChart submissionDetails={submissionDetails} handle={handle} />
-            </Item>
-          </Container>
-        </React.Fragment>
-      )}
-    </Box>
+    <ApexChart/>
+    // <Box
+    //   height="100vh"
+    //   display="flex"
+    //   flexDirection="column"
+    //   alignItems="center"
+    // >
+    //   <SearchBar onTermSubmit={onTermSubmit} />
+    //   {submissionDetails.length !== 0 && (
+    //     <React.Fragment>
+    //       <Box sx={{ width: "99%" }}>
+    //         <Grid
+    //           container
+    //           rowSpacing={2}
+    //           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+    //         >
+    //           <Grid item xs={6}>
+    //             <Item
+    //               elevation={24}
+    //               sx={{ backgroundColor: "whitesmoke", overflow: "auto" }}
+    //             >
+    //               <VerdictChart
+    //                 submissionDetails={submissionDetails}
+    //                 handle={handle}
+    //               />
+    //             </Item>
+    //           </Grid>
+    //           <Grid item xs={6}>
+    //             <Item elevation={24} sx={{ backgroundColor: "whitesmoke" }}>
+    //               <LanguagesChart
+    //                 submissionDetails={submissionDetails}
+    //                 handle={handle}
+    //               />
+    //             </Item>
+    //           </Grid>
+    //         </Grid>
+    //       </Box>
+
+    //       <Box height={10}></Box>
+    //       <Container sx={{ p: 2, m: 2 }}>
+    //         <Item
+    //           elevation={24}
+    //           sx={{ backgroundColor: "whitesmoke", overflow: "auto" }}
+    //         >
+    //           <TagChart submissionDetails={submissionDetails} handle={handle} />
+    //         </Item>
+    //       </Container>
+    //       <LevelChart submissionDetails={submissionDetails} handle={handle} />
+    //       <ApexChart />
+    //     </React.Fragment>
+    //   )}
+    // </Box>
   );
 };
 

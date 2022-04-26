@@ -17,24 +17,7 @@ const BarChart = ({ chartData, title }) => {
             display: false,
             position: "bottom",
           },
-          pan: {
-            enabled: true,
-            mode: "x",
-            speed: 10,
-            threshold: 10,
-            rangeMin: {
-              x: null,
-              y: null
-            },
-            rangeMax: {
-              x: null,
-              y: null
-            }
-          },
-          zoom: {
-            enabled: true,
-            mode: ""
-          }
+
         },
       }}
     />
