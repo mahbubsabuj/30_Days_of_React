@@ -1,5 +1,5 @@
 import React from "react";
-import BarChart from './BarChart';
+import BarChart from './charts/BarChart';
 import { colors } from "../utils/constants";
 
 const TagChart = ({ submissionDetails, handle }) => {
@@ -10,6 +10,7 @@ const TagChart = ({ submissionDetails, handle }) => {
         tagList.push(tag);
       });
     }
+    return 0;
   });
   const count = new Map();
   tagList.map((tag) => {
@@ -18,6 +19,7 @@ const TagChart = ({ submissionDetails, handle }) => {
     } else {
       count[tag]++;
     }
+    return 0;
   });
   const keys = [];
   const values = [];

@@ -29,7 +29,7 @@ const ResponsiveAppBar = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
-            variant="h6"
+            variant="h5"
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
@@ -82,7 +82,7 @@ const ResponsiveAppBar = () => {
           </Box>
           <Box>
             <Typography
-              variant="h6"
+              variant="h5"
               noWrap
               component="div"
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
@@ -99,7 +99,7 @@ const ResponsiveAppBar = () => {
                 value={index}
                 key={page}
                 onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: "white", display: "inline", ml: 9 }}
+                sx={{ my: 2, color: "white", display: "inline", ml: 2 }}
               >
                 <Typography textAlign="center">{page}</Typography>
               </Button>

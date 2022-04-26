@@ -1,10 +1,11 @@
 import React from "react";
 import { Pie, Bar, Line, Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
+import zoomPlugin from "chartjs-plugin-zoom";
 
-const LineChart = ({ chartData, title }) => {
+const PieChart = ({ chartData, title }) => {
   return (
-    <Line
+    <Pie
       data={chartData}
       options={{
         plugins: {
@@ -17,10 +18,21 @@ const LineChart = ({ chartData, title }) => {
             display: true,
             position: "bottom",
           },
+          zoom: {
+            zoom: {
+              wheel: {
+                enabled: true,
+              },
+              pinch: {
+                enabled: true,
+              },
+              mode: "xy",
+            },
+          },
         },
       }}
     />
   );
 };
 
-export default LineChart;
+export default PieChart;

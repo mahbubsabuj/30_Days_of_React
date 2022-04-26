@@ -4,7 +4,7 @@ import VerdictChart from "./VerdictChart";
 import LanguagesChart from "./LanguagesChart";
 import fetchUserSubmissions from "../apis/fetchUserSubmissions";
 import { Box } from "@mui/system";
-import { Grid } from "@mui/material";
+import { Container, Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import TagChart from "./TagChart";
@@ -48,34 +48,39 @@ const HomePage = () => {
     >
       <SearchBar onTermSubmit={onTermSubmit} />
       {submissionDetails.length !== 0 && (
-        <Box sx={{ width: "90%" }}>
-          <Grid
-            container
-            rowSpacing={1}
-            columnSpacing={{ xs: 2, sm: 3, md: 4 }}
-          >
-            <Grid item xs={6}>
-              <Item sx={{ backgroundColor: "whitesmoke" }}>
-                <VerdictChart
-                  submissionDetails={submissionDetails}
-                  handle={handle}
-                />
-              </Item>
+        <React.Fragment>
+          <Box sx={{ width: "90%",}}>
+            <Grid
+              container
+              rowSpacing={2}
+              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+            >
+              <Grid item xs={6}>
+                <Item elevation={24} sx={{ backgroundColor: "whitesmoke" }}>
+                  <VerdictChart
+                    submissionDetails={submissionDetails}
+                    handle={handle}
+                  />
+                </Item>
+              </Grid>
+              <Grid item xs={6}>
+                <Item elevation={24} sx={{ backgroundColor: "whitesmoke" }}>
+                  <LanguagesChart
+                    submissionDetails={submissionDetails}
+                    handle={handle}
+                  />
+                </Item>
+              </Grid>
             </Grid>
-            <Grid item xs={6}>
-              <Item sx={{ backgroundColor: "whitesmoke" }}>
-                <LanguagesChart
-                  submissionDetails={submissionDetails}
-                  handle={handle}
-                />
-              </Item>
-            </Grid>
-          </Grid>
-        </Box>
+          </Box>
+          <Box height={10}></Box>
+          <Container sx={{ p: 2, m: 2 }}>
+            <Item elevation={24} sx={{ backgroundColor: "whitesmoke" }}>
+              <TagChart submissionDetails={submissionDetails} handle={handle} />
+            </Item>
+          </Container>
+        </React.Fragment>
       )}
-      <Box height={10}></Box>
-      {submissionDetails.length !== 0 && <TagChart submissionDetails={submissionDetails} handle={handle} />}
-      
     </Box>
   );
 };
