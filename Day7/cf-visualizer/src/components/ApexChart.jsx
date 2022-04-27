@@ -5,19 +5,19 @@ import { Box } from "@mui/system";
 
 const ApexChart = () => {
   const chartData = {
-    series: [44, 55, 13, 43, 22],
+    series: [44, 55, 13, 43, 22, 44, 55, 13, 43, 22, 11],
     options: {
       chart: {
-        width: 380,
-        type: "pie",
+        width: 500,
+        type: "donut",
       },
-      labels: ["Team A", "Team B", "Team C", "Team D", "Team E"],
+      labels: ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K"],
       responsive: [
         {
           breakpoint: 500,
           options: {
             chart: {
-              width: 380,
+              width: 300,
             },
             legend: {
               position: "bottom",
@@ -28,24 +28,12 @@ const ApexChart = () => {
     },
   };
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        "& > :not(style)": {
-          m: 1,
-        },
-      }}
-    >
-      <Paper>
-        <Chart
-          options={chartData.options}
-          series={chartData.series}
-          type="pie"
-          width={380}
-        />
-      </Paper>
-    </Box>
+      <Chart
+        options={chartData.options}
+        series={chartData.series}
+        type="pie"
+        width={500}
+      />
   );
 };
 
