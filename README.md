@@ -61,3 +61,8 @@
   <li> Ran into some issues regarding responsiveness on mobile devices.tried couple of things to make mobile responsive. </li>
   <li> Replaced Chartjs with ApexChart </li>
 </ul>
+
+# Day 11
+<ul>
+<li> Explored ApexChart Package</li>
+</ul>
