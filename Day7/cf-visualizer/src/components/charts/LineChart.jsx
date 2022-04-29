@@ -8,6 +8,15 @@ const LineChart = ({ chartData, title }) => {
     <Line
       data={chartData}
       options={{
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: 'linear',
+            from: 1,
+            to: 0,
+            loop: true
+          }
+        },
         plugins: {
           title: {
             display: true,

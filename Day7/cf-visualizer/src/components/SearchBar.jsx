@@ -13,10 +13,11 @@ const SearchBar = ({ onTermSubmit }) => {
     setTerm(event.target.value);
   };
   useEffect(() => {
-    const initialValue = JSON.parse(localStorage.getItem("cfHandle"));
+    const saved = localStorage.getItem("cfHandle");
+    const initialValue = JSON.parse(saved);
     if (initialValue) {
       setTerm(initialValue);
-      onTermSubmit(term);
+      onTermSubmit(initialValue);
     }
   }, []);
   return (

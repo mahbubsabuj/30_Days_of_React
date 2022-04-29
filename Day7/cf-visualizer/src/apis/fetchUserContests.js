@@ -6,7 +6,17 @@ const fetchUserContests = async (handle) => {
       handle: handle,
     },
   });
-  return response;
+  const results = response.data.result.map((contest) => {
+    return {
+      contestId: contest.contestId,
+      contestName: contest.contestName,
+      newRating: contest.newRating,
+      oldRating: contest.oldRating,
+      rank: contest.rank,
+      delta: contest.newRating - contest.oldRating,
+    };
+  });
+  return results;
 };
 
 export default fetchUserContests;

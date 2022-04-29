@@ -8,6 +8,15 @@ const PieChart = ({ chartData, title }) => {
     <Pie
       data={chartData}
       options={{
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: "linear",
+            from: 1,
+            to: 0,
+            loop: true,
+          },
+        },
         responsive: true,
         maintainAspectRatio: false,
         plugins: {

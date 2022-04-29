@@ -128,6 +128,7 @@ const HomePage = () => {
                     backgroundColor: "whitesmoke",
                     overflow: "auto",
                     minHeight:"450px",
+                    
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",
@@ -195,3 +196,5 @@ const HomePage = () => {
 };
 
 export default HomePage;
+
+

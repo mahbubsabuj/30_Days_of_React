@@ -9,6 +9,15 @@ const BarChart = ({ chartData, title }) => {
       options={{
         responsive: true,
         maintainAspectRatio: false,
+        animations: {
+          tension: {
+            duration: 1000,
+            easing: "linear",
+            from: 1,
+            to: 0,
+            loop: true,
+          },
+        },
         plugins: {
           title: {
             display: true,
@@ -19,7 +28,6 @@ const BarChart = ({ chartData, title }) => {
             display: false,
             position: "bottom",
           },
-
         },
       }}
     />
