@@ -48,7 +48,7 @@
   <li> Material UI Buttons, Forms, Table etc</li>
 </ul>
 
-# Day 7 & 8 & 9
+# Day 7 - 9
 
 <ul>
   <li> Trying to make a Codeforces Visualizer app using Codeforces Api </li>
@@ -63,6 +63,13 @@
 </ul>
 
 # Day 11
+
 <ul>
   <li> Explored ApexChart Package</li>
+</ul>
+
+# Day 12 - 13
+
+<ul> 
+   <li> Made ChartJS charts Responsive for Mobile / Tablet Devices <li>
 </ul>
