@@ -1,7 +1,7 @@
 import React from "react";
 import { colors } from "../utils/constants";
-import ApexDonutChart from './charts/ApexDonutChart';
 import DoughnutChart from "./charts/DoughnutChart";
+import PieChart from "./charts/PieChart";
 
 const LanguagesChart = ({ submissionDetails, handle }) => {
   const reduced = Object.values(submissionDetails).reduce(
@@ -18,8 +18,18 @@ const LanguagesChart = ({ submissionDetails, handle }) => {
     keys.push(reduced[key].key);
     values.push(reduced[key].count);
   });
+  const chartData = {
+    labels: keys,
+    datasets: [
+      {
+        label: `Submissions of ${handle}`,
+        data: values,
+        backgroundColor: colors,
+      },
+    ],
+  };
   return (
-    <ApexDonutChart series={values} labels={keys} title={`Language used by ${handle}`} />
+    <DoughnutChart chartData={chartData} title={`Language used by ${handle}`} />
   );
 };
 

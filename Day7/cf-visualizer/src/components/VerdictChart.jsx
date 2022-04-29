@@ -1,15 +1,13 @@
 import React from "react";
 import { colors } from "../utils/constants";
 import DoughnutChart from "./charts/DoughnutChart";
-import ApexDonutChart from './charts/ApexDonutChart';
+import PieChart from "./charts/PieChart";
 const VerdictChart = ({ submissionDetails, handle }) => {
   const reduced = Object.values(submissionDetails).reduce(
     (res, { verdict }) => {
-      {
         res[verdict] = res[verdict] || { key: verdict, count: 0 };
         res[verdict].count++;
         return res;
-      }
     },
     {}
   );
@@ -23,8 +21,18 @@ const VerdictChart = ({ submissionDetails, handle }) => {
     }
     values.push(reduced[key].count);
   });
+  const chartData = {
+    labels: keys,
+    datasets: [
+      {
+        label: `Submissions of ${handle}`,
+        data: values,
+        backgroundColor: colors,
+      },
+    ],
+  };
   return (
-    <ApexDonutChart series={values} labels={keys} title={`Submissions of ${handle}`} />
+    <DoughnutChart chartData={chartData} title={`Submissions of ${handle}`} />
   );
 };
 

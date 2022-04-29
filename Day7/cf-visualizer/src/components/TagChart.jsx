@@ -1,6 +1,7 @@
 import React from "react";
 import BarChart from './charts/BarChart';
-import ApexBarChart from "./charts/ApexBarChart";
+import PieChart from './charts/PieChart';
+import LineChart from "./charts/LineChart";
 import { colors } from "../utils/constants";
 
 const TagChart = ({ submissionDetails, handle }) => {
@@ -38,7 +39,7 @@ const TagChart = ({ submissionDetails, handle }) => {
       },
     ],
   };
-  return <ApexBarChart series={values} labels={keys} title={`Tags of ${handle}`} />;
+  return <PieChart chartData={chartData} title={`Tags of ${handle}`} />;
 };
 
 export default TagChart;

@@ -2,7 +2,6 @@ import React from "react";
 import { Pie, Bar, Line, Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import zoomPlugin from "chartjs-plugin-zoom";
-Chart.register(zoomPlugin);
 
 const LineChart = ({ chartData, title }) => {
   return (

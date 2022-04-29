@@ -64,5 +64,5 @@
 
 # Day 11
 <ul>
-<li> Explored ApexChart Package</li>
+  <li> Explored ApexChart Package</li>
 </ul>

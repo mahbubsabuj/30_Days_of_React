@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import SearchBar from "./SearchBar";
 import VerdictChart from "./VerdictChart";
 import LanguagesChart from "./LanguagesChart";
-import ApexChart from "./ApexChart";
-import ApexBarChart from "./charts/ApexBarChart";
 import LevelChart from "./LevelChart";
 import fetchUserSubmissions from "../apis/fetchUserSubmissions";
 import { Box } from "@mui/system";
@@ -11,6 +9,7 @@ import { Container, Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import TagChart from "./TagChart";
+import RatingChart from "./RatingChart";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
@@ -41,12 +40,7 @@ const HomePage = () => {
   };
 
   return (
-    <Box
-      height="100vh"
-      display="flex"
-      flexDirection="column"
-      alignItems="center"
-    >
+    <Box display="flex" flexDirection="column" alignItems="center">
       <SearchBar onTermSubmit={onTermSubmit} />
       {submissionDetails.length !== 0 && (
         <React.Fragment>
@@ -54,16 +48,18 @@ const HomePage = () => {
           <Box sx={{ width: "100%" }}>
             <Grid
               container
-              rowSpacing={2}
-              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+              rowSpacing={3}
+              columnSpacing={{ xs: 5, sm: 2, md: 2 }}
             >
-              <Grid item xs={6}>
+              <Grid item xs sm md lg xl>
                 <Item
                   elevation={24}
                   sx={{
+                    pl: 5,
+                    pr: 5,
                     backgroundColor: "whitesmoke",
+                    minHeight: "350px",
                     overflow: "auto",
-                    height: "350px",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
@@ -74,13 +70,15 @@ const HomePage = () => {
                   />
                 </Item>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item xs sm md lg xl>
                 <Item
                   elevation={24}
                   sx={{
+                    pl: 5,
+                    pr: 5,
                     backgroundColor: "whitesmoke",
+                    minHeight: "350px",
                     overflow: "auto",
-                    height: "350px",
                     alignItems: "center",
                     justifyContent: "center",
                   }}
@@ -94,20 +92,33 @@ const HomePage = () => {
             </Grid>
           </Box>
 
-          <Box height={10}></Box>
-          <Box  sx={{m: 5, width:"100%", backgroundColor: "whitesmoke"}}>
-            <Item
-              elevation={24}
-              sx={{
-                backgroundColor: "whitesmoke",
-                overflow: "auto",
-                width: "100%",
-                height: "100%",
-              }}
+          <Box height={20}></Box>
+          <Box sx={{ width: "100%" }}>
+            <Grid
+              container
+              rowSpacing={2}
+              columnSpacing={{ xs: 5, sm: 2, md: 2 }}
             >
-              <TagChart submissionDetails={submissionDetails} handle={handle} />
-            </Item>
+              <Grid item xs sm md lg xl>
+                <Item
+                  elevation={24}
+                  sx={{
+                    backgroundColor: "whitesmoke",
+                    minHeight: "800px",
+                    overflow: "auto",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <TagChart
+                    submissionDetails={submissionDetails}
+                    handle={handle}
+                  />
+                </Item>
+              </Grid>
+            </Grid>
           </Box>
+          <RatingChart submissionDetails={submissionDetails} handle={handle} />
         </React.Fragment>
       )}
     </Box>

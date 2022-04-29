@@ -11,8 +11,8 @@ import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
 import { Link } from "react-router-dom";
 
-const pages = ["Home", "Compare", "About"];
-const routes = ["/", "/compare", "/about"];
+const pages = ["Home", "Contests", "Compare", "About"];
+const routes = ["/", "/contests", "/compare", "/about"];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = useState(null);
@@ -90,7 +90,7 @@ const ResponsiveAppBar = () => {
               CF Visualizer
             </Typography>
           </Box>
-          <Box sx={{ ml: 100 }} />
+          <Box sx={{ ml: 80 }} />
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
             {pages.map((page, index) => (
               <Button

@@ -8,6 +8,8 @@ const PieChart = ({ chartData, title }) => {
     <Pie
       data={chartData}
       options={{
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           title: {
             display: true,
