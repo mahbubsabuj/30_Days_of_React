@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import VerdictChart from "./VerdictChart";
 import LanguagesChart from "./LanguagesChart";
 import LevelChart from "./LevelChart";
+import Loader from "../utils/Loader";
 import fetchUserSubmissions from "../apis/fetchUserSubmissions";
 import { Box } from "@mui/system";
 import { Container, Grid } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import TagChart from "./TagChart";
+import ContestStats from "./ContestStats";
+import SubmissionStats from "./SubmissionStats";
 import RatingChart from "./RatingChart";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -24,7 +27,6 @@ const HomePage = () => {
   const [handle, setHandle] = useState("");
   const onTermSubmit = async (term) => {
     const response = await fetchUserSubmissions(term);
-    console.log(response);
     const results = response.data.result.map((data) => {
       return {
         contestId: data.problem.contestId,
@@ -35,7 +37,6 @@ const HomePage = () => {
         language: data.programmingLanguage,
       };
     });
-
     setHandle(term);
     setSubmissionDetails(results);
   };
@@ -53,13 +54,33 @@ const HomePage = () => {
               columnSpacing={{ xs: 5, sm: 2, md: 2 }}
             >
               <Grid item xs sm md lg xl>
+              <ContestStats
+                    handle={handle}
+                  />
+              </Grid>
+              <Grid item xs sm md lg xl>
+              <SubmissionStats
+                    submissionDetails={submissionDetails}
+                    handle={handle}
+                  />
+              </Grid>
+            </Grid>
+          </Box>
+          <Box height={20}></Box>
+          <Box sx={{ width: "90%" }}>
+            <Grid
+              container
+              rowSpacing={3}
+              columnSpacing={{ xs: 5, sm: 2, md: 2 }}
+            >
+              <Grid item xs sm md lg xl>
                 <Item
                   elevation={24}
                   sx={{
                     pl: 5,
                     pr: 5,
                     backgroundColor: "whitesmoke",
-                    minHeight: "320px",
+                    minHeight: "350px",
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",
@@ -78,7 +99,7 @@ const HomePage = () => {
                     pl: 5,
                     pr: 5,
                     backgroundColor: "whitesmoke",
-                    minHeight: "320px",
+                    minHeight: "350px",
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",

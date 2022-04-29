@@ -9,7 +9,6 @@ const LevelChart = ({ submissionDetails, handle }) => {
     }
     return res;
   }, []);
-  console.log(acceptedProblems);
   const reduced = Object.values(acceptedProblems).reduce((res, { index }) => {
     res[index[0]] = res[index[0]] || { key: index[0], count: 0 };
     res[index[0]].count++;
