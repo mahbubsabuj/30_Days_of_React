@@ -24,6 +24,7 @@ const HomePage = () => {
   const [handle, setHandle] = useState("");
   const onTermSubmit = async (term) => {
     const response = await fetchUserSubmissions(term);
+    console.log(response);
     const results = response.data.result.map((data) => {
       return {
         contestId: data.problem.contestId,
@@ -45,7 +46,7 @@ const HomePage = () => {
       {submissionDetails.length !== 0 && (
         <React.Fragment>
           <Box height={10}></Box>
-          <Box sx={{ width: "100%" }}>
+          <Box sx={{ width: "90%" }}>
             <Grid
               container
               rowSpacing={3}
@@ -58,7 +59,7 @@ const HomePage = () => {
                     pl: 5,
                     pr: 5,
                     backgroundColor: "whitesmoke",
-                    minHeight: "350px",
+                    minHeight: "320px",
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",
@@ -77,7 +78,7 @@ const HomePage = () => {
                     pl: 5,
                     pr: 5,
                     backgroundColor: "whitesmoke",
-                    minHeight: "350px",
+                    minHeight: "320px",
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",
@@ -93,7 +94,7 @@ const HomePage = () => {
           </Box>
 
           <Box height={20}></Box>
-          <Box sx={{ width: "100%" }}>
+          <Box sx={{ width: "90%" }}>
             <Grid
               container
               rowSpacing={2}
@@ -104,7 +105,8 @@ const HomePage = () => {
                   elevation={24}
                   sx={{
                     backgroundColor: "whitesmoke",
-                    minHeight: "800px",
+                    overflow: "auto",
+                    minHeight:"450px",
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",
@@ -118,7 +120,53 @@ const HomePage = () => {
               </Grid>
             </Grid>
           </Box>
-          <RatingChart submissionDetails={submissionDetails} handle={handle} />
+          <Box height={20}></Box>
+          <Box sx={{ width: "90%" }}>
+            <Grid
+              container
+              rowSpacing={2}
+              columnSpacing={{ xs: 5, sm: 2, md: 2 }}
+            >
+              <Grid item xs sm md lg xl>
+                <Item
+                  elevation={24}
+                  sx={{
+                    backgroundColor: "whitesmoke",
+                    overflow: "auto",
+                    minHeight: "300px",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <RatingChart submissionDetails={submissionDetails} handle={handle} />
+                </Item>
+              </Grid>
+            </Grid>
+          </Box>
+          <Box height={20}></Box>
+          <Box sx={{ width: "90%" }}>
+            <Grid
+              container
+              rowSpacing={2}
+              columnSpacing={{ xs: 5, sm: 2, md: 2 }}
+            >
+              <Grid item xs sm md lg xl>
+                <Item
+                  elevation={24}
+                  sx={{
+                    backgroundColor: "whitesmoke",
+                    overflow: "auto",
+                    minHeight: "300px",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <LevelChart submissionDetails={submissionDetails} handle={handle} />
+                </Item>
+              </Grid>
+            </Grid>
+          </Box>
+          
         </React.Fragment>
       )}
     </Box>

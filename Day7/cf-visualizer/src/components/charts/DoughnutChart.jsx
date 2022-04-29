@@ -7,6 +7,8 @@ const DoughnutChart = ({ chartData, title }) => {
     <Doughnut
       data={chartData}
       options={{
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           title: {
             display: true,

@@ -7,6 +7,8 @@ const BarChart = ({ chartData, title }) => {
     <Bar
       data={chartData}
       options={{
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           title: {
             display: true,

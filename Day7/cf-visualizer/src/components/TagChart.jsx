@@ -3,6 +3,8 @@ import BarChart from './charts/BarChart';
 import PieChart from './charts/PieChart';
 import LineChart from "./charts/LineChart";
 import { colors } from "../utils/constants";
+import { Doughnut } from "react-chartjs-2";
+import DoughnutChart from "./charts/DoughnutChart";
 
 const TagChart = ({ submissionDetails, handle }) => {
   const tagList = [];
