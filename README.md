@@ -72,4 +72,5 @@
 
 <ul> 
    <li> Made ChartJS charts Responsive for Mobile / Tablet Devices <li>
+   <li> CFVisualizer : https://cfvisualizer.netlify.app/ </li>
 </ul>
