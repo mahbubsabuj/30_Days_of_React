@@ -59,11 +59,11 @@ const ContestStats = ({ handle }) => {
       }
     });
     setUpdatedRows([
-      createData("Number of Contests(Rated)", results.length),
+      createData("Number of contests (rated)", results.length),
       createData("Best rank", createLink(`https://codeforces.com/contest/${bestRankContestId}`, bestRank, bestRankContestId)),
-      createData("Worst Rank", createLink(`https://codeforces.com/contest/${worstRankContestId}`, worstRank, worstRankContestId)),
-      createData("Max Increment", createLink(`https://codeforces.com/contest/${maxDeltaContestId}`, maxDelta, maxDeltaContestId)),
-      createData("Max Decrement",createLink(`https://codeforces.com/contest/${minDeltaContestId}`, minDelta, minDeltaContestId)),
+      createData("Worst rank", createLink(`https://codeforces.com/contest/${worstRankContestId}`, worstRank, worstRankContestId)),
+      createData("Max up", createLink(`https://codeforces.com/contest/${maxDeltaContestId}`, maxDelta, maxDeltaContestId)),
+      createData("Max down",createLink(`https://codeforces.com/contest/${minDeltaContestId}`, minDelta, minDeltaContestId)),
       createData("_", "_"),
     ]);
   };

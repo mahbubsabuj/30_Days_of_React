@@ -54,15 +54,13 @@ const HomePage = () => {
               columnSpacing={{ xs: 5, sm: 2, md: 2 }}
             >
               <Grid item xs sm md lg xl>
-              <ContestStats
-                    handle={handle}
-                  />
+                <ContestStats handle={handle} />
               </Grid>
               <Grid item xs sm md lg xl>
-              <SubmissionStats
-                    submissionDetails={submissionDetails}
-                    handle={handle}
-                  />
+                <SubmissionStats
+                  submissionDetails={submissionDetails}
+                  handle={handle}
+                />
               </Grid>
             </Grid>
           </Box>
@@ -127,8 +125,8 @@ const HomePage = () => {
                   sx={{
                     backgroundColor: "whitesmoke",
                     overflow: "auto",
-                    minHeight:"450px",
-                    
+                    minHeight: "450px",
+
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",
@@ -160,7 +158,10 @@ const HomePage = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <RatingChart submissionDetails={submissionDetails} handle={handle} />
+                  <RatingChart
+                    submissionDetails={submissionDetails}
+                    handle={handle}
+                  />
                 </Item>
               </Grid>
             </Grid>
@@ -183,12 +184,14 @@ const HomePage = () => {
                     justifyContent: "center",
                   }}
                 >
-                  <LevelChart submissionDetails={submissionDetails} handle={handle} />
+                  <LevelChart
+                    submissionDetails={submissionDetails}
+                    handle={handle}
+                  />
                 </Item>
               </Grid>
             </Grid>
           </Box>
-          
         </React.Fragment>
       )}
     </Box>
@@ -196,5 +199,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
-

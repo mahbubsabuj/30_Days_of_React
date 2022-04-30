@@ -44,7 +44,7 @@ const SubmissionStats = ({ submissionDetails, handle }) => {
     createData("Average attempts", (totalCount / Math.max(1, solved)).toFixed(3)),
     createData("Max attempts", maxAttepts),
     createData("Solved with single submission", solvedWithSingleSubmission),
-    createData("max AC(s)", maxAcceptedCount),
+    createData("Max AC(s)", maxAcceptedCount),
   ];
   return (
     <DataTable rows={rows} header={"Submission stats of "} handle={handle} />

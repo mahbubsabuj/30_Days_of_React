@@ -5,8 +5,9 @@ import { Box } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import ComparePage from "./components/ComparePage";
-import Contests from "./components/Contests";
+import ContestsPage from "./components/ContestsPage";
 import AboutPage from "./components/AboutPage";
+import PrimaryAppBar from "./components/MainAppBar";
 const theme = createTheme({
   breakpoints: {
     values: {
@@ -19,7 +20,7 @@ const theme = createTheme({
   },
   palette: {
     primary: {
-      main: "#1A1A40",
+      main: "#000000",
     },
     secondary: {
       main: "#ffa500",
@@ -31,10 +32,10 @@ const App = () => {
   return (
     <ThemeProvider theme={theme}>
       <Box>
-        <MenuBar />
+        <PrimaryAppBar />
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/contests" element={<Contests />} />
+          <Route path="/contests" element={<ContestsPage />} />
           <Route path="/compare" element={<ComparePage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
