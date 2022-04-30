@@ -29,7 +29,7 @@ const SearchBar = ({ onTermSubmit }) => {
   }, []);
   return (
     <Item elevation={24}>
-      <Box sx={{ m: 2 }} component="form" onSubmit={handleSubmit}>
+      <Box component="form" onSubmit={handleSubmit}>
         <TextField
           id="filled-search"
           type="search"

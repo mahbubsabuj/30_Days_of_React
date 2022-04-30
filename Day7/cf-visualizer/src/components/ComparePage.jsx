@@ -72,7 +72,6 @@ const ComparePage = () => {
       <Box textAlign="center">
         <Button
           style={{
-            borderRadius: 10,
             backgroundColor: "black",
             fontSize: "18px",
           }}
