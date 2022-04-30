@@ -77,7 +77,7 @@ const MainAppBar = () => {
           </SvgIcon>
 
           <Typography variant="h6" noWrap component="div">
-          Codeforces Visualizer
+            Codeforces Visualizer
           </Typography>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: "none", md: "flex" } }}>

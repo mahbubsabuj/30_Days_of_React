@@ -43,6 +43,7 @@ const HomePage = () => {
 
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
+      <Box height={10}></Box>
       <SearchBar onTermSubmit={onTermSubmit} />
       {submissionDetails.length !== 0 && (
         <React.Fragment>

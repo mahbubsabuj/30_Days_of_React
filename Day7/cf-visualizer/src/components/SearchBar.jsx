@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { Box } from "@mui/system";
+import { Paper } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import { TextField } from "@mui/material";
+
+const Item = styled(Paper)(({ theme }) => ({
+  padding: theme.spacing(1),
+  textAlign: "center",
+}));
 
 const SearchBar = ({ onTermSubmit }) => {
   const [term, setTerm] = useState("");
@@ -21,19 +28,21 @@ const SearchBar = ({ onTermSubmit }) => {
     }
   }, []);
   return (
-    <Box sx={{ m: 2 }} component="form" onSubmit={handleSubmit}>
-      <TextField
-        id="filled-search"
-        type="search"
-        variant="filled"
-        placeholder="Enter your CF Handle"
-        sx={{ color: "black", borderColor: "black" }}
-        inputProps={{ style: { color: "black", backgroundColor: "white" } }}
-        focused
-        value={term}
-        onChange={handleInputChange}
-      />
-    </Box>
+    <Item elevation={24}>
+      <Box sx={{ m: 2 }} component="form" onSubmit={handleSubmit}>
+        <TextField
+          id="filled-search"
+          type="search"
+          variant="filled"
+          placeholder="Enter your CF Handle"
+          sx={{ color: "black", borderColor: "black" }}
+          inputProps={{ style: { color: "black", backgroundColor: "white" } }}
+          focused
+          value={term}
+          onChange={handleInputChange}
+        />
+      </Box>
+    </Item>
   );
 };
 
