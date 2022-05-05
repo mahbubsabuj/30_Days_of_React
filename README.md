@@ -74,3 +74,9 @@
    <li> Made ChartJS charts Responsive for Mobile / Tablet Devices </li>
    <li> CFVisualizer : https://cfvisualizer.netlify.app/ </li>
 </ul>
+
+# Day 14 - 17
+<ul>
+  <li> Learned how to / when to use LocalStorage </li>
+  <li> Explored React hot toaster Package</li>
+</ul>
