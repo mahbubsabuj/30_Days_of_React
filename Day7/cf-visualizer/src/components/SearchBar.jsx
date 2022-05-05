@@ -24,7 +24,6 @@ const SearchBar = ({ onTermSubmit }) => {
     const initialValue = JSON.parse(saved);
     if (initialValue) {
       setTerm(initialValue);
-      onTermSubmit(initialValue);
     }
   }, []);
   return (

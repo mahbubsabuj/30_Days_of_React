@@ -25,6 +25,7 @@ const BarChart = ({ chartData, title }) => {
             color: "black",
           },
           legend: {
+            
             display: false,
             position: "bottom",
           },

@@ -1,5 +1,5 @@
 import React from "react";
-import { Pie, Bar, Line, Doughnut } from "react-chartjs-2";
+import { Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 
 const DoughnutChart = ({ chartData, title }) => {
@@ -12,11 +12,11 @@ const DoughnutChart = ({ chartData, title }) => {
         animations: {
           tension: {
             duration: 1000,
-            easing: 'linear',
+            easing: "linear",
             from: 1,
             to: 0,
-            loop: true
-          }
+            loop: true,
+          },
         },
         plugins: {
           title: {

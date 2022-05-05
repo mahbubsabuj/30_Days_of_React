@@ -3,32 +3,16 @@ import { colors } from "../utils/constants";
 import DoughnutChart from "./charts/DoughnutChart";
 import LineChart from "./charts/LineChart";
 import BarChart from "./charts/BarChart";
+import { getRatingListData } from "../utils/dataPrepare";
 
 const RatingChart = ({ submissionDetails, handle }) => {
-  const acceptedProblems = submissionDetails.reduce((res, value) => {
-    if (value.verdict === "OK") {
-      res.push(value);
-    }
-    return res;
-  }, []);
-
-  const reduced = Object.values(acceptedProblems).reduce((res, { rating }) => {
-    res[rating] = res[rating] || { key: rating, count: 0 };
-    res[rating].count++;
-    return res;
-  }, {});
-  const keys = [];
-  const values = [];
-  Object.keys(reduced).forEach((key) => {
-    keys.push(key);
-    values.push(reduced[key].count);
-  });
+  const reduced = getRatingListData(submissionDetails);
   const chartData = {
-    labels: keys,
+    labels: Object.keys(reduced),
     datasets: [
       {
         label: `Solved`,
-        data: values,
+        data: Object.values(reduced),
         backgroundColor: colors,
       },
     ],

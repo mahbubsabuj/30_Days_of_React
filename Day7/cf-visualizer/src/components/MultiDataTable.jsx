@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import { styled } from "@mui/material/styles";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -28,7 +28,19 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
   },
 }));
 
-const DataTable = ({ rows, header, handle }) => {
+function createData(title, value1, space, value2) {
+  return { title, value1, space, value2 };
+}
+
+const MultiDataTable = ({ rows, header, handle1, handle2 }) => {
+  // console.log(rows1)
+  // const rows = [
+  //   createData("Frozen yoghurt", 159, " ", 6.0),
+  //   createData("Ice cream sandwich", 237, " ", 9.0),
+  //   createData("Eclair", 262, " ", 16.0),
+  //   createData("Cupcake", 305, " ", 3.7),
+  //   createData("Gingerbread", 356, " ", 16.0),
+  // ];
   return (
     <TableContainer component={Paper} elevation={24}>
       <Table
@@ -43,9 +55,20 @@ const DataTable = ({ rows, header, handle }) => {
                 style={{ color: "white", fontWeight: "bold" }}
                 target="_blank"
                 rel="noreferrer"
-                href={`https://codeforces.com/profile/${handle}`}
+                href={`https://codeforces.com/profile/${handle1}`}
               >
-                {handle}
+                {handle1}
+              </a>
+            </StyledTableCell>
+            {/* <StyledTableCell align="right">&</StyledTableCell> */}
+            <StyledTableCell align="right">
+              <a
+                style={{ color: "white", fontWeight: "bold" }}
+                target="_blank"
+                rel="noreferrer"
+                href={`https://codeforces.com/profile/${handle2}`}
+              >
+                {handle2}
               </a>
             </StyledTableCell>
           </TableRow>
@@ -56,7 +79,9 @@ const DataTable = ({ rows, header, handle }) => {
               <StyledTableCell component="th" scope="row">
                 {row.title}
               </StyledTableCell>
-              <StyledTableCell align="right">{row.value}</StyledTableCell>
+              <StyledTableCell align="right">{row.value1}</StyledTableCell>
+              {/* <StyledTableCell align="right">{row.space}</StyledTableCell> */}
+              <StyledTableCell align="right">{row.value2}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
@@ -65,4 +90,4 @@ const DataTable = ({ rows, header, handle }) => {
   );
 };
 
-export default DataTable;
+export default MultiDataTable;

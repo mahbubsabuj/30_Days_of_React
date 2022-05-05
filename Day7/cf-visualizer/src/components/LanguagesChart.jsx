@@ -1,7 +1,6 @@
 import React from "react";
-import { colors } from "../utils/constants";
 import DoughnutChart from "./charts/DoughnutChart";
-import PieChart from "./charts/PieChart";
+import { colors } from "../utils/constants";
 
 const LanguagesChart = ({ submissionDetails, handle }) => {
   const reduced = Object.values(submissionDetails).reduce(

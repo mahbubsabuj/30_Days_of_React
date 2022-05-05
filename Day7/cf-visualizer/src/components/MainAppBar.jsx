@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -6,16 +6,32 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import MenuItem from "@mui/material/MenuItem";
 import Menu from "@mui/material/Menu";
-import { SvgIcon } from "@mui/material";
-import { Container } from "@mui/material";
-import MoreIcon from "@mui/icons-material/MoreVert";
+import HomeIcon from "@mui/icons-material/Home";
+
+import SvgIcon from "@mui/material/SvgIcon";
+import Container from "@mui/material/Container";
+import MenuIcon from "@mui/icons-material/Menu";
+import PsychologyIcon from "@mui/icons-material/Psychology";
+import DifferenceIcon from "@mui/icons-material/Difference";
+import InfoIcon from "@mui/icons-material/Info";
 import { Link } from "react-router-dom";
+
+//theming
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import Brightness7Icon from "@mui/icons-material/Brightness7";
 
 const pages = ["Home", "Contests", "Compare", "About"];
 const routes = ["/", "/contests", "/compare", "/about"];
+const menuIcons = [
+  <HomeIcon sx={{ p: 1 }} />,
+  <PsychologyIcon sx={{ p: 1 }} />,
+  <DifferenceIcon sx={{ p: 1 }} />,
+  <InfoIcon sx={{ p: 1 }} />,
+];
 
-const MainAppBar = () => {
-  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
+const MainAppBar = ({ changeTheme }) => {
+  const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
+  const [theme, setTheme] = useState("light");
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleMobileMenuClose = () => {
@@ -24,6 +40,10 @@ const MainAppBar = () => {
 
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
+  };
+  const handleThemeChange = (event) => {
+    changeTheme(theme === "light" ? "dark" : "light");
+    setTheme((prevState) => (prevState === "light" ? "dark" : "light"));
   };
 
   const mobileMenuId = "primary-search-account-menu-mobile";
@@ -50,10 +70,15 @@ const MainAppBar = () => {
           to={routes[index]}
           key={page}
           value={index}
+          onClick={handleMobileMenuClose}
         >
+          {menuIcons[index]}
           <Typography textAlign="center">{page}</Typography>
         </MenuItem>
       ))}
+      {/* <IconButton sx={{ ml: 1 }} onClick={handleThemeChange} color="inherit">
+        {theme === "light" ? <Brightness7Icon /> : <Brightness4Icon />}
+      </IconButton> */}
     </Menu>
   );
 
@@ -89,9 +114,17 @@ const MainAppBar = () => {
                 key={page}
                 value={index}
               >
+                {menuIcons[index]}
                 <Typography textAlign="center">{page}</Typography>
               </MenuItem>
             ))}
+            {/* <IconButton
+              sx={{ ml: 1 }}
+              onClick={handleThemeChange}
+              color="inherit"
+            >
+              {theme === "light" ? <Brightness7Icon /> : <Brightness4Icon />}
+            </IconButton> */}
           </Box>
           <Box sx={{ display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -102,7 +135,7 @@ const MainAppBar = () => {
               onClick={handleMobileMenuOpen}
               color="inherit"
             >
-              <MoreIcon />
+              <MenuIcon />
             </IconButton>
           </Box>
         </Toolbar>
