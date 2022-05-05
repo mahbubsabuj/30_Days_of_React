@@ -20,8 +20,8 @@ import { Link } from "react-router-dom";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 
-const pages = ["Home", "Contests", "Compare", "About"];
-const routes = ["/", "/contests", "/compare", "/about"];
+const pages = ["Home", "Contests", "Compare"];
+const routes = ["/", "/contests", "/compare"];
 const menuIcons = [
   <HomeIcon sx={{ p: 1 }} />,
   <PsychologyIcon sx={{ p: 1 }} />,

@@ -127,7 +127,7 @@ const MultiChartCompare = ({
   return (
     <React.Fragment>
       <MultiDataTable
-        header={"Contest & Submission stats of "}
+        header={"Contest & Submission stats"}
         rows={rows}
         handle1={cfHandle1}
         handle2={cfHandle2}

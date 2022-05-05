@@ -5,12 +5,16 @@ import LanguagesChart from "./LanguagesChart";
 import LevelChart from "./LevelChart";
 import Box from "@mui/system/Box";
 import Grid from "@mui/material/Grid";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import { Icon, IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import TagChart from "./TagChart";
 import ContestStats from "./ContestStats";
 import SubmissionStats from "./SubmissionStats";
 import RatingChart from "./RatingChart";
+import { Typography } from "@mui/material";
+import { Divider } from "@mui/material";
 import fetchUserSubmissions from "../apis/fetchUserSubmissions";
 import toast, { Toaster } from "react-hot-toast";
 import fetchUserContests from "../apis/fetchUserContests";
@@ -341,6 +345,24 @@ const HomePage = () => {
           </Box>
         </React.Fragment>
       )}
+
+      <Box height="30px" />
+      <Typography fontWeight={"bold"}>
+        {"Developed by mahbubsabuj"}
+        <a
+          style={{ color: "blue", fontWeight: "bold" }}
+          href="https://github.com/mahbubsabuj"
+        ></a>
+      </Typography>
+      <Box heigh="30px" />
+      <IconButton
+        target="_blank"
+        color="primary"
+        rel="noreferrer"
+        href="https://github.com/mahbubsabuj"
+      >
+        <GitHubIcon />
+      </IconButton>
     </Box>
   );
 };

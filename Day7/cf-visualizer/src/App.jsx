@@ -52,7 +52,7 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/contests" element={<ContestsPage />} />
           <Route path="/compare" element={<ComparePage />} />
-          <Route path="/about" element={<AboutPage />} />
+          {/* <Route path="/about" element={<AboutPage />} /> */}
         </Routes>
       </Box>
     </ThemeProvider>

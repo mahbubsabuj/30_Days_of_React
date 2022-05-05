@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
 import Paper from "@mui/material/Paper";
@@ -28,6 +28,7 @@ const ComparePage = () => {
     setSubmissionDetails1([]);
     setSubmissionDetails2([]);
     if (handle1 && handle2) {
+      
       const toastId = toast.loading("Fetching ...", {
         iconTheme: {
           primary: "#000",
@@ -125,7 +126,6 @@ const ComparePage = () => {
   };
   return (
     <Box
-      component="form"
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -137,41 +137,37 @@ const ComparePage = () => {
       onSubmit={handleSubmit}
     >
       <Toaster />
-
-      <Grid
-        container
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-        sx={{ pl: 8, pr: 8 }}
-      >
-        <Grid item xs={1}>
-          <Paper></Paper>
-        </Grid>
-        <Grid item xs={5}>
-          <Item elevation={24}>
-            <InputField handleChange={setHandle1} placeholder={"Handle 1"} />
-          </Item>
-        </Grid>
-        <Grid item xs={5}>
-          <Item elevation={24}>
-            <InputField handleChange={setHandle2} placeholder={"Handle 2"} />
-          </Item>
-        </Grid>
-        <Grid item xs={1}>
-          <Paper></Paper>
-        </Grid>
-      </Grid>
-      <Box textAlign="center">
-        <Button
-          style={{
-            backgroundColor: "black",
-            fontSize: "18px",
-          }}
-          variant="contained"
-          startIcon={<CompareArrowsIcon />}
-          onClick={handleSubmit}
+      <Box component="form" onSubmit={(event) => console.log("HELLO")}>
+        <Grid
+          container
+          columnSpacing={{ xs: 1, sm: 3, md: 4 }}
+          sx={{ pl: 5.5, pr: 5.5 }}
         >
-          Compare
-        </Button>
+          <Grid item xs sm md lg xl>
+            <Item elevation={24}>
+              <InputField handleChange={setHandle1} placeholder={"Handle 1"} />
+            </Item>
+          </Grid>
+          <Grid item xs sm md lg xl>
+            <Item elevation={24}>
+              <InputField handleChange={setHandle2} placeholder={"Handle 2"} />
+            </Item>
+          </Grid>
+        </Grid>
+        <Box height="10px" />
+        <Box textAlign="center">
+          <Button
+            style={{
+              backgroundColor: "black",
+              fontSize: "18px",
+            }}
+            variant="contained"
+            startIcon={<CompareArrowsIcon />}
+            onClick={handleSubmit}
+          >
+            Compare
+          </Button>
+        </Box>
       </Box>
       {submissionDetails1.length !== 0 &&
         submissionDetails2.length !== 0 &&
@@ -186,8 +182,6 @@ const ComparePage = () => {
             contestDetails2={contestDetails2}
           />
         )}
-
-      {/* <MultiBarChart /> */}
     </Box>
   );
 };

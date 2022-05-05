@@ -25,3 +25,4 @@ const InputField = ({ handleChange, placeholder }) => {
 };
 
 export default InputField;
+

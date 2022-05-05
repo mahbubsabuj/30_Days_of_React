@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Badge, Typography } from "@mui/material";
+import { Badge, Divider, Typography } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
@@ -158,6 +158,7 @@ const ContestsPage = () => {
           onChange={handleChange}
           variant="scrollable"
           scrollButtons="auto"
+          allowScrollButtonsMobile
           aria-label="scrollable auto tabs example"
         >
           {buttons.map((button, index) => {
@@ -188,7 +189,7 @@ const ContestsPage = () => {
         flexDirection="column"
         alignItems="center"
       >
-        <Grid container rowSpacing={3} columnSpacing={{ xs: 5, sm: 2, md: 2 }}>
+        <Grid container columnSpacing={{ xs: 5, sm: 2, md: 2 }}>
           <Grid item xs sm md lg xl>
             {futureContests.length !== 0 && (
               <ContestTable

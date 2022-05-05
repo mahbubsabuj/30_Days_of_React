@@ -8,6 +8,7 @@ import TableHead from "@mui/material/TableHead";
 import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import convertSecondsToTime from "../utils/convertSecondsToTime";
+
 import { Typography } from "@mui/material";
 
 function createData(name, startTime, endTime, duration, site = "codeforces") {
@@ -77,7 +78,7 @@ const ContestTable = ({ contests, site, tableTitle }) => {
           <TableHead>
             <TableRow>
               <TableCell align="center" colSpan={5.5}>
-                <Typography fontWeight="bold" variant="h6">
+                <Typography fontWeight="bold" variant="h5">
                   {heading}
                 </Typography>
               </TableCell>

@@ -1,5 +1,5 @@
 // import { SvgIcon } from "@mui/material";
-export const colors2 = [
+export const colors = [
   "#4caf50",
   "#8bc34a",
   "#cddc39",
@@ -14,9 +14,29 @@ export const colors2 = [
   "#795548",
   "#9e9e9e",
   "#ff5722",
+  "#3e8c2a",
+  "#f70504",
+  "#4fa6db",
+  "#fe9b02",
+  "#a71659",
+  "#7b59b1",
+  "	#fa5396",
+  "#001f3d",
+  "#001f3d",
+  "#009933",
+  "#895b06",
+  "#f44336",
+  "#e91e63",
+  "#9c27b0",
+  "#673ab7",
+  "#3f51b5",
+  "#2196f3",
+  "#03a9f4",
+  "#00bcd4",
+  "#03a9f4",
 ];
 
-export const colors = [
+export const color2 = [
   "#3e8c2a",
   "#f70504",
   "#4fa6db",
