@@ -1,9 +1,12 @@
 import React from "react";
+import { useTheme } from "@emotion/react";
 import { Pie, Bar, Line, Doughnut } from "react-chartjs-2";
 import { Chart as ChartJS } from "chart.js/auto";
 import zoomPlugin from "chartjs-plugin-zoom";
 
 const PieChart = ({ chartData, title }) => {
+  const theme = useTheme();
+  const color = theme.palette.text.primary;
   return (
     <Pie
       data={chartData}
@@ -23,11 +26,14 @@ const PieChart = ({ chartData, title }) => {
           title: {
             display: true,
             text: title,
-            color: "black",
+            color: color,
           },
           legend: {
             display: true,
             position: "bottom",
+            labels: {
+              color: color,
+            }
           },
           zoom: {
             zoom: {

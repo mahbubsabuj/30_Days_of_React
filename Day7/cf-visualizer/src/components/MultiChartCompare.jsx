@@ -1,4 +1,5 @@
 import React from "react";
+import { useTheme } from "@emotion/react";
 import MultiBarChart from "./charts/MultiBarChart";
 import MultiDataTable from "./MultiDataTable";
 import { Grid } from "@mui/material";
@@ -6,6 +7,7 @@ import { Paper } from "@mui/material";
 import { Box } from "@mui/material";
 import styled from "@emotion/styled";
 import {
+  createLink,
   getTagListData,
   combineCount,
   getLevelListData,
@@ -37,6 +39,7 @@ const MultiChartCompare = ({
   contestDetails1,
   contestDetails2,
 }) => {
+  const theme = useTheme();
   //contest stats of
   //submissions stats of
   //levels, problem ratings, tags
@@ -83,6 +86,7 @@ const MultiChartCompare = ({
   //max up + max up contest
   //max down  + max down contest
   //max rating => implement
+
   const rows = [
     createData(
       "Current rating",
@@ -103,24 +107,66 @@ const MultiChartCompare = ({
       contestDetails2.ratedCount
     ),
     createData("Solve count", triedSolvedCount[1], " ", triedSolvedCount[3]),
+    //contestLink, rank, contestId, color
     createData(
       "Best rank",
-      contestDetails1.bestRank,
+      createLink(
+        contestDetails1.bestRank.contestLink,
+        contestDetails1.bestRank.rank,
+        contestDetails1.bestRank.contestId,
+        theme.palette.text.primary
+      ),
       " ",
-      contestDetails2.bestRank
+      createLink(
+        contestDetails2.bestRank.contestLink,
+        contestDetails2.bestRank.rank,
+        contestDetails2.bestRank.contestId,
+        theme.palette.text.primary
+      )
     ),
     createData(
       "Worst rank",
-      contestDetails1.worstRank,
+      createLink(
+        contestDetails1.worstRank.contestLink,
+        contestDetails1.worstRank.rank,
+        contestDetails1.worstRank.contestId,
+        theme.palette.text.primary
+      ),
       " ",
-      contestDetails2.worstRank
+      createLink(
+        contestDetails2.worstRank.contestLink,
+        contestDetails2.worstRank.rank,
+        contestDetails2.worstRank.contestId,
+        theme.palette.text.primary
+      )
     ),
-    createData("Max up", contestDetails1.maxUp, " ", contestDetails2.maxUp),
+    createData("Max up", createLink(
+      contestDetails1.maxUp.contestLink,
+      contestDetails1.maxUp.rank,
+      contestDetails1.maxUp.contestId,
+      theme.palette.text.primary
+    )," ", createLink(
+      contestDetails2.maxUp.contestLink,
+      contestDetails2.maxUp.rank,
+      contestDetails2.maxUp.contestId,
+      theme.palette.text.primary
+    ),),
     createData(
       "Max Down",
-      contestDetails1.maxDown,
+      createLink(
+        contestDetails1.maxDown.contestLink,
+        contestDetails1.maxDown.rank,
+        contestDetails1.maxDown.contestId,
+        theme.palette.text.primary
+      ),
+
       " ",
-      contestDetails2.maxDown
+      createLink(
+        contestDetails2.maxDown.contestLink,
+        contestDetails2.maxDown.rank,
+        contestDetails2.maxDown.contestId,
+        theme.palette.text.primary
+      )
     ),
   ];
   console.log(rows);

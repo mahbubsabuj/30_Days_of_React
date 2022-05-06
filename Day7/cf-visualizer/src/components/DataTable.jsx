@@ -29,6 +29,7 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 }));
 
 const DataTable = ({ rows, header, handle }) => {
+  
   return (
     <TableContainer component={Paper} elevation={24}>
       <Table

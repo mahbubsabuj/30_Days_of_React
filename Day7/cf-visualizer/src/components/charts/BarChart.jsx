@@ -1,8 +1,11 @@
 import React from "react";
 import { Pie, Bar, Line, Doughnut } from "react-chartjs-2";
+import { useTheme } from "@emotion/react";
 import { Chart as ChartJS } from "chart.js/auto";
 
 const BarChart = ({ chartData, title }) => {
+  const theme = useTheme();
+  const color = theme.palette.text.primary;
   return (
     <Bar
       data={chartData}
@@ -22,12 +25,14 @@ const BarChart = ({ chartData, title }) => {
           title: {
             display: true,
             text: title,
-            color: "black",
+            color: color,
           },
           legend: {
-            
             display: false,
             position: "bottom",
+            labels: {
+              color: color,
+            },
           },
         },
       }}

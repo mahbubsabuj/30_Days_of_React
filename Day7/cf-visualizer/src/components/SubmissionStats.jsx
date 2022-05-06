@@ -1,12 +1,12 @@
-import { breakpoints } from "@mui/system";
 import React from "react";
+import { useTheme } from "@emotion/react";
 import DataTable from "./DataTable";
 
 function createData(title, value) {
   return { title, value };
 }
 
-function createLink(count, id) {
+function createLink(count, id, color) {
   if (id.length === 0) {
     return count;
   }
@@ -17,7 +17,7 @@ function createLink(count, id) {
     <div>
       {count}(
       <a
-        style={{ color: "black", fontWeight: "bold" }}
+        style={{ color: color, fontWeight: "bold" }}
         target="_blank"
         rel="noreferrer"
         href={problemLink}
@@ -30,6 +30,7 @@ function createLink(count, id) {
 }
 
 const SubmissionStats = ({ submissionDetails, handle }) => {
+  const theme = useTheme();
   const reduced = submissionDetails.reduce(
     (res, { contestId, index, verdict }) => {
       res[contestId + " " + index] = res[contestId + " " + index] || {
@@ -77,11 +78,18 @@ const SubmissionStats = ({ submissionDetails, handle }) => {
       "Average attempts",
       (totalCount / Math.max(1, solved)).toFixed(3)
     ),
-    createData("Max attempts", createLink(maxAttempts, maxAttemptedProblemId)),
+    createData(
+      "Max attempts",
+      createLink(maxAttempts, maxAttemptedProblemId, theme.palette.text.primary)
+    ),
     createData("Solved with single submission", solvedWithSingleSubmission),
     createData(
       "Max Accepted submissions",
-      createLink(maxAcceptedCount, maxAcceptedProblemId)
+      createLink(
+        maxAcceptedCount,
+        maxAcceptedProblemId,
+        theme.palette.text.primary
+      )
     ),
   ];
   return <DataTable rows={rows} header={"Submission stats"} handle={handle} />;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useTheme } from "@emotion/react";
 import { Badge, Divider, Typography } from "@mui/material";
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
@@ -65,6 +66,7 @@ const contestCount = (present, future) => {
 };
 
 const ContestsPage = () => {
+  const theme = useTheme();
   const [value, setValue] = useState(0);
   const [siteContestCount, setSiteContestCount] = useState(
     emptyObject(buttons)
@@ -151,11 +153,18 @@ const ContestsPage = () => {
       <Box
         width="90%"
         evaluation={24}
-        sx={{ maxWidth: { xs: 420, sm: 580, backgroundColor: "whitesmoke" } }}
+        sx={{
+          maxWidth: {
+            xs: 420,
+            sm: 580,
+            backgroundColor: theme.palette.action.disabledBackground,
+          },
+        }}
       >
         <Tabs
           value={value}
           onChange={handleChange}
+          indicatorColor="primary"
           variant="scrollable"
           scrollButtons="auto"
           allowScrollButtonsMobile

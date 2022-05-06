@@ -3,6 +3,7 @@ import SearchBar from "./SearchBar";
 import VerdictChart from "./VerdictChart";
 import LanguagesChart from "./LanguagesChart";
 import LevelChart from "./LevelChart";
+import { useTheme } from "@emotion/react";
 import Box from "@mui/system/Box";
 import Grid from "@mui/material/Grid";
 import GitHubIcon from "@mui/icons-material/GitHub";
@@ -33,6 +34,7 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const HomePage = () => {
+  const theme = useTheme();
   const [submissionDetails, setSubmissionDetails] = useState([]);
   const [contestDetails, setContestDetails] = useState([]);
   const [handle, setHandle] = useState("");
@@ -117,38 +119,31 @@ const HomePage = () => {
               });
               setContestDetails([
                 createData("Number of contests (rated)", contestResults.length),
-                createData(
-                  "Best rank",
-                  createLink(
-                    `https://codeforces.com/contest/${bestRankContestId}`,
-                    bestRank,
-                    bestRankContestId
-                  )
-                ),
-                createData(
-                  "Worst rank",
-                  createLink(
-                    `https://codeforces.com/contest/${worstRankContestId}`,
-                    worstRank,
-                    worstRankContestId
-                  )
-                ),
-                createData(
-                  "Max up",
-                  createLink(
-                    `https://codeforces.com/contest/${maxDeltaContestId}`,
-                    maxDelta,
-                    maxDeltaContestId
-                  )
-                ),
-                createData(
-                  "Max down",
-                  createLink(
-                    `https://codeforces.com/contest/${minDeltaContestId}`,
-                    minDelta,
-                    minDeltaContestId
-                  )
-                ),
+                createData("Best rank", {
+                  //contestLink, rank, contestId, color
+                  contestLink: `https://codeforces.com/contest/${bestRankContestId}`,
+                  rank: bestRank,
+                  contestId: bestRankContestId,
+                  color: theme.palette.text.primary,
+                }),
+                createData("Worst rank", {
+                  contestLink: `https://codeforces.com/contest/${worstRankContestId}`,
+                  rank: worstRank,
+                  contestId: worstRankContestId,
+                  color: theme.palette.text.primary,
+                }),
+                createData("Max up", {
+                  contestLink: `https://codeforces.com/contest/${maxDeltaContestId}`,
+                  rank: maxDelta,
+                  contestId: maxDeltaContestId,
+                  color: theme.palette.text.primary,
+                }),
+                createData("Max down", {
+                  contestLink: `https://codeforces.com/contest/${minDeltaContestId}`,
+                  rank: minDelta,
+                  contestId: minDeltaContestId,
+                  color: theme.palette.text.primary,
+                }),
                 createData("Current rating", rating),
               ]);
             } else {
@@ -187,7 +182,7 @@ const HomePage = () => {
   };
 
   return (
-    <Box display="flex" flexDirection="column" alignItems="center">
+    <Box display="flex" flexDirection="column" alignItems="center" width="100%">
       <Toaster />
       <Box height={10}></Box>
       <SearchBar onTermSubmit={onTermSubmit} />
@@ -229,7 +224,7 @@ const HomePage = () => {
                   sx={{
                     pl: 5,
                     pr: 5,
-                    backgroundColor: "whitesmoke",
+                    backgroundColor: theme.palette.backgroundColor,
                     minHeight: "350px",
                     overflow: "auto",
                     alignItems: "center",
@@ -248,7 +243,7 @@ const HomePage = () => {
                   sx={{
                     pl: 5,
                     pr: 5,
-                    backgroundColor: "whitesmoke",
+                    backgroundColor: theme.palette.backgroundColor,
                     minHeight: "350px",
                     overflow: "auto",
                     alignItems: "center",
@@ -275,7 +270,7 @@ const HomePage = () => {
                 <Item
                   elevation={24}
                   sx={{
-                    backgroundColor: "whitesmoke",
+                    backgroundColor: theme.palette.backgroundColor,
                     overflow: "auto",
                     minHeight: "750px",
                     // maxheight: "750px"
@@ -302,7 +297,7 @@ const HomePage = () => {
                 <Item
                   elevation={24}
                   sx={{
-                    backgroundColor: "whitesmoke",
+                    backgroundColor: theme.palette.backgroundColor,
                     overflow: "auto",
                     minHeight: "300px",
                     alignItems: "center",
@@ -328,7 +323,7 @@ const HomePage = () => {
                 <Item
                   elevation={24}
                   sx={{
-                    backgroundColor: "whitesmoke",
+                    backgroundColor: theme.palette.backgroundColor,
                     overflow: "auto",
                     minHeight: "300px",
                     alignItems: "center",

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTheme } from "@emotion/react";
 import Paper from "@mui/material/Paper";
 import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
@@ -17,15 +18,16 @@ function createData(name, startTime, endTime, duration, site = "codeforces") {
 const ids = ["name", "startTime", "endTime", "duration", "site"];
 const cols = ["Name", "Start Time", "End Time", "Duration", "Site"];
 
-const createLink = (name, link) => {
+const createLink = (name, link, color) => {
   return (
-    <a style={{ color: "black" }} target="_blank" rel="noreferrer" href={link}>
+    <a style={{ color: color}} target="_blank" rel="noreferrer" href={link}>
       {name}
     </a>
   );
 };
 
 const ContestTable = ({ contests, site, tableTitle }) => {
+  const theme = useTheme();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(10);
 
@@ -45,7 +47,7 @@ const ContestTable = ({ contests, site, tableTitle }) => {
     if (site === "All") {
       res.push(
         createData(
-          createLink(contest.name, contest.url),
+          createLink(contest.name, contest.url, theme.palette.text.primary),
           st,
           et,
           time,
@@ -56,7 +58,7 @@ const ContestTable = ({ contests, site, tableTitle }) => {
       if (site === contest.site) {
         res.push(
           createData(
-            createLink(contest.name, contest.url),
+            createLink(contest.name, contest.url, theme.palette.text.primary),
             st,
             et,
             time,

@@ -1,5 +1,6 @@
 import React from "react";
 import { Bar } from "react-chartjs-2";
+import { useTheme } from "@emotion/react";
 import { Chart as ChartJS } from "chart.js/auto";
 import { colors } from "../../utils/constants";
 
@@ -11,6 +12,8 @@ const MultiBarChart = ({
   cfHandle1,
   cfHandle2,
 }) => {
+  const theme = useTheme();
+  const color = theme.palette.text.primary;
   const data = {
     labels: labels,
     datasets: [
@@ -42,11 +45,17 @@ const MultiBarChart = ({
       title: {
         display: true,
         text: title,
-        color: "black",
+        color: color,
+      },
+      labels: {
+        color: color,
       },
       legend: {
         display: false,
         position: "bottom",
+        labels: {
+          fontColor: color,
+        },
       },
     },
   };

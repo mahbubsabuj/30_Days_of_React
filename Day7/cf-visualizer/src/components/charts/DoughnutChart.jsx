@@ -1,8 +1,11 @@
 import React from "react";
 import { Doughnut } from "react-chartjs-2";
+import { useTheme } from "@emotion/react";
 import { Chart as ChartJS } from "chart.js/auto";
 
 const DoughnutChart = ({ chartData, title }) => {
+  const theme = useTheme();
+  const color = theme.palette.text.primary;
   return (
     <Doughnut
       data={chartData}
@@ -22,11 +25,14 @@ const DoughnutChart = ({ chartData, title }) => {
           title: {
             display: true,
             text: title,
-            color: "black",
+            color: color,
           },
           legend: {
             display: true,
             position: "bottom",
+            labels: {
+              color: color,
+            },
           },
         },
       }}

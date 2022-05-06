@@ -33,14 +33,6 @@ function createData(title, value1, space, value2) {
 }
 
 const MultiDataTable = ({ rows, header, handle1, handle2 }) => {
-  // console.log(rows1)
-  // const rows = [
-  //   createData("Frozen yoghurt", 159, " ", 6.0),
-  //   createData("Ice cream sandwich", 237, " ", 9.0),
-  //   createData("Eclair", 262, " ", 16.0),
-  //   createData("Cupcake", 305, " ", 3.7),
-  //   createData("Gingerbread", 356, " ", 16.0),
-  // ];
   return (
     <TableContainer component={Paper} elevation={24}>
       <Table
@@ -80,7 +72,6 @@ const MultiDataTable = ({ rows, header, handle1, handle2 }) => {
                 {row.title}
               </StyledTableCell>
               <StyledTableCell align="right">{row.value1}</StyledTableCell>
-              {/* <StyledTableCell align="right">{row.space}</StyledTableCell> */}
               <StyledTableCell align="right">{row.value2}</StyledTableCell>
             </StyledTableRow>
           ))}

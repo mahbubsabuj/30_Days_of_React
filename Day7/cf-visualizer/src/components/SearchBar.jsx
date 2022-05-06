@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Box } from "@mui/system";
 import { Paper } from "@mui/material";
 import { styled } from "@mui/material/styles";
+import { useTheme } from "@emotion/react";
 import { TextField } from "@mui/material";
 
 const Item = styled(Paper)(({ theme }) => ({
@@ -10,6 +11,8 @@ const Item = styled(Paper)(({ theme }) => ({
 }));
 
 const SearchBar = ({ onTermSubmit }) => {
+  const theme = useTheme();
+  const color = theme.palette.text.primary;
   const [term, setTerm] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -35,7 +38,7 @@ const SearchBar = ({ onTermSubmit }) => {
           variant="filled"
           placeholder="Enter your CF Handle"
           sx={{ color: "black", borderColor: "black" }}
-          inputProps={{ style: { color: "black", backgroundColor: "white" } }}
+          inputProps={{ style: { color: "black", backgroundColor: theme.palette.backgroundColor } }}
           focused
           value={term}
           onChange={handleInputChange}

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
-import { TextField } from "@mui/material";;
+import { useTheme } from "@emotion/react";
+import { TextField } from "@mui/material";
 
 const InputField = ({ handleChange, placeholder }) => {
+  const theme = useTheme();
+  const color = theme.palette.text.primary;
   const [cfHandle, setCfHandle] = useState("");
   const handleInputChange = (event) => {
     setCfHandle(event.target.value);
@@ -15,7 +18,10 @@ const InputField = ({ handleChange, placeholder }) => {
       placeholder={placeholder}
       sx={{ color: "black", borderColor: "black" }}
       inputProps={{
-        style: { color: "black", backgroundColor: "white" },
+        style: {
+          color: color,
+          backgroundColor: theme.palette.backgroundColor,
+        },
       }}
       focused
       value={cfHandle}
@@ -25,4 +31,3 @@ const InputField = ({ handleChange, placeholder }) => {
 };
 
 export default InputField;
-

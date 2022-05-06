@@ -37,12 +37,12 @@ export const getTagListData = (submissionDetails) => {
   return sorted;
 };
 
-export const createLink = (contestLink, rank, contestId) => {
+export const createLink = (contestLink, rank, contestId, color) => {
   return (
     <div>
       {rank}(
       <a
-        style={{ color: "black", fontWeight: "bold" }}
+        style={{ color: color, fontWeight: "bold" }}
         target="_blank"
         rel="noreferrer"
         href={contestLink}
@@ -99,26 +99,27 @@ export const getContestDetails = (contests) => {
   const result = {
     ratedCount: contests.length,
     maxRating: maxRating,
-    bestRank: createLink(
-      `https://codeforces.com/contest/${bestRankContestId}`,
-      bestRank,
-      bestRankContestId
-    ),
-    worstRank: createLink(
-      `https://codeforces.com/contest/${worstRankContestId}`,
-      worstRank,
-      worstRankContestId
-    ),
-    maxUp: createLink(
-      `https://codeforces.com/contest/${maxDeltaContestId}`,
-      maxDelta,
-      maxDeltaContestId
-    ),
-    maxDown: createLink(
-      `https://codeforces.com/contest/${minDeltaContestId}`,
-      minDelta,
-      minDeltaContestId
-    ),
+    //contestLink, rank, contestId, color
+    bestRank: {
+      contestId: `https://codeforces.com/contest/${bestRankContestId}`,
+      rank: bestRank,
+      contestId: bestRankContestId,
+    },
+    worstRank: {
+      contestLink: `https://codeforces.com/contest/${worstRankContestId}`,
+      rank: worstRank,
+      contestId: worstRankContestId,
+    },
+    maxUp: {
+      contestLink: `https://codeforces.com/contest/${maxDeltaContestId}`,
+      rank: maxDelta,
+      contestId: maxDeltaContestId,
+    },
+    maxDown: {
+      contestLink: `https://codeforces.com/contest/${minDeltaContestId}`,
+      rank: minDelta,
+      contestId: minDeltaContestId,
+    },
     currentRating: rating,
   };
   return result;
