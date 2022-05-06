@@ -10,6 +10,24 @@ const BarChart = ({ chartData, title }) => {
     <Bar
       data={chartData}
       options={{
+        scales: {
+          y: {
+            ticks: {
+              color: theme.palette.text.primary, 
+              font: {
+                size: 14,
+              },
+            },
+          },
+          x: {
+            ticks: {
+              color: theme.palette.text.primary,
+              font: {
+                size: 14,
+              },
+            },
+          },
+        },
         responsive: true,
         maintainAspectRatio: false,
         animations: {

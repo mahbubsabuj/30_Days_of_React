@@ -101,7 +101,7 @@ export const getContestDetails = (contests) => {
     maxRating: maxRating,
     //contestLink, rank, contestId, color
     bestRank: {
-      contestId: `https://codeforces.com/contest/${bestRankContestId}`,
+      contestLink: `https://codeforces.com/contest/${bestRankContestId}`,
       rank: bestRank,
       contestId: bestRankContestId,
     },

@@ -86,7 +86,7 @@ const MultiChartCompare = ({
   //max up + max up contest
   //max down  + max down contest
   //max rating => implement
-
+  console.log(contestDetails1, contestDetails2)
   const rows = [
     createData(
       "Current rating",
@@ -140,17 +140,22 @@ const MultiChartCompare = ({
         theme.palette.text.primary
       )
     ),
-    createData("Max up", createLink(
-      contestDetails1.maxUp.contestLink,
-      contestDetails1.maxUp.rank,
-      contestDetails1.maxUp.contestId,
-      theme.palette.text.primary
-    )," ", createLink(
-      contestDetails2.maxUp.contestLink,
-      contestDetails2.maxUp.rank,
-      contestDetails2.maxUp.contestId,
-      theme.palette.text.primary
-    ),),
+    createData(
+      "Max up",
+      createLink(
+        contestDetails1.maxUp.contestLink,
+        contestDetails1.maxUp.rank,
+        contestDetails1.maxUp.contestId,
+        theme.palette.text.primary
+      ),
+      " ",
+      createLink(
+        contestDetails2.maxUp.contestLink,
+        contestDetails2.maxUp.rank,
+        contestDetails2.maxUp.contestId,
+        theme.palette.text.primary
+      )
+    ),
     createData(
       "Max Down",
       createLink(

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { ThemeProvider, createTheme } from "@mui/material/styles";
 import { Box, CssBaseline, ScopedCssBaseline } from "@mui/material";
 import { Routes, Route } from "react-router-dom";
@@ -7,7 +7,7 @@ import ComparePage from "./components/ComparePage";
 import ContestsPage from "./components/ContestsPage";
 import AboutPage from "./components/AboutPage";
 import MainAppBar from "./components/MainAppBar";
-const themeOne = createTheme({
+const light = createTheme({
   breakpoints: {
     values: {
       xs: 0,
@@ -20,11 +20,11 @@ const themeOne = createTheme({
   palette: {
     mode: "light",
     buttonColor: "#FFFFFF",
-    appBarColor: "#00695f"
+    appBarColor: "green",
   },
 });
 
-const themeTwo = createTheme({
+const dark = createTheme({
   breakpoints: {
     values: {
       xs: 0,
@@ -38,14 +38,22 @@ const themeTwo = createTheme({
   palette: {
     mode: "dark",
     buttonColor: "#272727",
-    appBarColor: "#000000"
+    appBarColor: "#000000",
   },
 });
 
 const App = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
+  // useEffect(() => {
+  //   const saved = localStorage.getItem("theme");
+  //   const initialTheme = JSON.parse(saved);
+  //   if (initialTheme) {
+  //     console.log(initialTheme)
+  //     setTheme(initialTheme);
+  //   }
+  // }, []);
   return (
-    <ThemeProvider theme={theme === "light" ? themeOne : themeTwo}>
+    <ThemeProvider theme={theme === "light" ? light : dark}>
       <ScopedCssBaseline enableColorScheme>
         <CssBaseline />
         <Box>

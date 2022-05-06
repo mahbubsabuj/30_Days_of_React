@@ -32,6 +32,24 @@ const MultiBarChart = ({
   const options = {
     responsive: true,
     maintainAspectRatio: false,
+    scales: {
+      y: {
+        ticks: {
+          color: theme.palette.text.primary, 
+          font: {
+            size: 14,
+          },
+        },
+      },
+      x: {
+        ticks: {
+          color: theme.palette.text.primary,
+          font: {
+            size: 14,
+          },
+        },
+      },
+    },
     animations: {
       tension: {
         duration: 1000,

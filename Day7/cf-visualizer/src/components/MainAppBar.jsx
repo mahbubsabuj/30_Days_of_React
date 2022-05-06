@@ -32,7 +32,7 @@ const menuIcons = [
 
 const MainAppBar = ({ changeTheme }) => {
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState("dark");
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
   const handleMobileMenuClose = () => {
@@ -43,6 +43,7 @@ const MainAppBar = ({ changeTheme }) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
   const handleThemeChange = (event) => {
+    // localStorage.setItem("theme", JSON.stringify(theme === "light" ? "dark" : "light"));
     changeTheme(theme === "light" ? "dark" : "light");
     setTheme((prevState) => (prevState === "light" ? "dark" : "light"));
   };

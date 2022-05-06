@@ -13,7 +13,7 @@ import { Grid } from "@mui/material";
 const StyledBadge = styled(Badge)(({ theme }) => ({
   "& .MuiBadge-badge": {
     right: -3,
-    top: -6,
+    top: -4,
     border: `1px solid ${theme.palette.background.paper}`,
     padding: "0 4px",
   },
@@ -178,9 +178,13 @@ const ContestsPage = () => {
                   <StyledBadge
                     value={index}
                     badgeContent={siteContestCount[button]}
-                    color="primary"
+                    color="success"
                   >
-                    <Typography fontSize={14} fontWeight="bold">
+                    <Typography
+                      fontSize={14}
+                      fontWeight="bold"
+                      color={theme.palette.text.primary}
+                    >
                       {button}
                     </Typography>
                   </StyledBadge>

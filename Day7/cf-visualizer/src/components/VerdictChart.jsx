@@ -32,7 +32,7 @@ const VerdictChart = ({ submissionDetails, handle }) => {
     ],
   };
   return (
-    <DoughnutChart chartData={chartData} title={`Submissions of ${handle}`} />
+    <DoughnutChart chartData={chartData} title={`Verdicts of ${handle}`} />
   );
 };
 

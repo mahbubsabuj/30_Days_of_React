@@ -12,7 +12,6 @@ const Item = styled(Paper)(({ theme }) => ({
 
 const SearchBar = ({ onTermSubmit }) => {
   const theme = useTheme();
-  const color = theme.palette.text.primary;
   const [term, setTerm] = useState("");
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -37,8 +36,7 @@ const SearchBar = ({ onTermSubmit }) => {
           type="search"
           variant="filled"
           placeholder="Enter your CF Handle"
-          sx={{ color: "black", borderColor: "black" }}
-          inputProps={{ style: { color: "black", backgroundColor: theme.palette.backgroundColor } }}
+          inputProps={{ style: { color: theme.palette.text.primary, backgroundColor: theme.palette.backgroundColor } }}
           focused
           value={term}
           onChange={handleInputChange}

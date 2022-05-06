@@ -7,7 +7,7 @@ import { useTheme } from "@emotion/react";
 import Box from "@mui/system/Box";
 import Grid from "@mui/material/Grid";
 import GitHubIcon from "@mui/icons-material/GitHub";
-import { Icon, IconButton } from "@mui/material";
+import { IconButton } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import TagChart from "./TagChart";
@@ -15,11 +15,9 @@ import ContestStats from "./ContestStats";
 import SubmissionStats from "./SubmissionStats";
 import RatingChart from "./RatingChart";
 import { Typography } from "@mui/material";
-import { Divider } from "@mui/material";
 import fetchUserSubmissions from "../apis/fetchUserSubmissions";
 import toast, { Toaster } from "react-hot-toast";
 import fetchUserContests from "../apis/fetchUserContests";
-import { createLink } from "../utils/dataPrepare";
 
 const createData = (title, value) => {
   return { title, value };
@@ -225,7 +223,8 @@ const HomePage = () => {
                     pl: 5,
                     pr: 5,
                     backgroundColor: theme.palette.backgroundColor,
-                    minHeight: "350px",
+                    minHeight: "550px",
+                    // maxHeight: "450px",
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",
@@ -244,7 +243,7 @@ const HomePage = () => {
                     pl: 5,
                     pr: 5,
                     backgroundColor: theme.palette.backgroundColor,
-                    minHeight: "350px",
+                    minHeight: "550px",
                     overflow: "auto",
                     alignItems: "center",
                     justifyContent: "center",
@@ -272,7 +271,7 @@ const HomePage = () => {
                   sx={{
                     backgroundColor: theme.palette.backgroundColor,
                     overflow: "auto",
-                    minHeight: "750px",
+                    minHeight: "450px",
                     // maxheight: "750px"
                     alignItems: "center",
                     justifyContent: "center",
@@ -343,20 +342,16 @@ const HomePage = () => {
 
       <Box height="30px" />
       <Typography fontWeight={"bold"}>
-        {"Developed by mahbubsabuj"}
-        <a
-          style={{ color: "blue", fontWeight: "bold" }}
-          href="https://github.com/mahbubsabuj"
-        ></a>
+        {"Developed by Mahbubul Alam Sabuj"}
       </Typography>
-      <Box heigh="30px" />
-      <IconButton
+      <Box height="5px" />
+      <IconButton 
         target="_blank"
         color="primary"
         rel="noreferrer"
         href="https://github.com/mahbubsabuj"
       >
-        <GitHubIcon />
+        <GitHubIcon size="large"/>
       </IconButton>
     </Box>
   );
