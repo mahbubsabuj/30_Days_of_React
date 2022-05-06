@@ -1,6 +1,6 @@
 # 30_Days_of_React
 
-# This is my attempt to learn react basics in 30 days. i will update my progess on daily basis for next 30 days in here.
+**This is my attempt to learn react basics in 30 days. i will update my progess on daily basis for next 30 days in this repo.**
 
 # Day 1
 
@@ -58,25 +58,25 @@
 # Day 10
 
 <ul>
-  <li> Ran into some issues regarding responsiveness on mobile devices.tried couple of things to make mobile responsive. </li>
-  <li> Replaced Chartjs with ApexChart </li>
+  <li> Ran into some issues regarding responsiveness on mobile devices.tried couple of things to make charts mobile responsive. </li>
+  <li> tried apexchart </li>
 </ul>
 
 # Day 11
 
 <ul>
-  <li> Explored ApexChart Package</li>
+  <li> tried couple of chart packages.</li>
 </ul>
 
 # Day 12 - 13
 
 <ul> 
    <li> Made ChartJS charts Responsive for Mobile / Tablet Devices </li>
-   <li> CFVisualizer : https://cfvisualizer.netlify.app/ </li>
+   <li> deployed CFVisualizer into netlify. CFVisualizer : https://cfvisualizer.netlify.app/ </li>
 </ul>
 
 # Day 14 - 17
 <ul>
   <li> Learned how to / when to use LocalStorage </li>
-  <li> Explored React hot toaster Package</li>
+  <li> learned how to use React hot toaster Package</li>
 </ul>
