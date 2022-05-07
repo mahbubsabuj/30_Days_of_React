@@ -2,7 +2,10 @@
 
 **This is my attempt to learn react basics in 30 days. i will update my progess on daily basis for next 30 days in this repo.**
 
+<hr>
+<hr>
 <h5>Day 1</h5>
+<hr>
 
 <ul>
   <li> Basic Commands (ex: create-react-app, npm start, etc) </li>
@@ -14,6 +17,7 @@
 </ul>
 
 <h5>Day 2</h5>
+<hr>
 
 <ul>
   <li> Functional Components </li>
@@ -22,6 +26,7 @@
 </ul>
 
 <h5>Day 3</h5>
+<hr>
 
 <ul>
   <li> Unsplash API </li>
@@ -29,12 +34,14 @@
 </ul>
 
 <h5>Day 4</h5>
+<hr>
 
 <ul>
   <li> useRef, createRef</li>
 </ul>
 
 <h5>Day 5</h5>
+<hr>
 
 <ul>
   <li> Youtube API </li>
@@ -42,6 +49,7 @@
 </ul>
 
 <h5>Day 6</h5>
+<hr>
 
 <ul>
   <li> Explored Codeforces API </li>
@@ -49,6 +57,7 @@
 </ul>
 
 <h5>Day 7 - 9</h5>
+<hr>
 
 <ul>
   <li> Trying to make a Codeforces Visualizer app using Codeforces Api </li>
@@ -56,6 +65,7 @@
 </ul>
 
 <h5>Day 10</h5>
+<hr>
 
 <ul>
   <li> Ran into some issues regarding responsiveness on mobile devices.tried couple of things to make charts mobile responsive. </li>
@@ -63,12 +73,14 @@
 </ul>
 
 <h5>Day 11</h5>
+<hr>
 
 <ul>
   <li> tried couple of chart packages.</li>
 </ul>
 
 <h5>Day 12 - 13</h5>
+<hr>
 
 <ul> 
    <li> Made ChartJS charts Responsive for Mobile / Tablet Devices </li>
@@ -76,12 +88,14 @@
 </ul>
 
 <h5>Day 14 - 17</h5>
+<hr>
 <ul>
   <li> Learned how to / when to use LocalStorage </li>
   <li> learned how to use React hot toaster Package</li>
 </ul>
 
 <h5> Day 18 - 19 </h5>
+<hr>
 <ul>
   <li> Watched some videos & read some blogs about state management.</li>
 </ul>
