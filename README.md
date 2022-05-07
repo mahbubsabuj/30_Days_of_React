@@ -80,3 +80,8 @@
   <li> Learned how to / when to use LocalStorage </li>
   <li> learned how to use React hot toaster Package</li>
 </ul>
+
+# Day 18
+<ul>
+  <li> Watched some videos & read some blogs about state management.</li>
+</ul>
