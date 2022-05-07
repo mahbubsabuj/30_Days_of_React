@@ -5,7 +5,6 @@ import { Routes, Route } from "react-router-dom";
 import HomePage from "./components/HomePage";
 import ComparePage from "./components/ComparePage";
 import ContestsPage from "./components/ContestsPage";
-import AboutPage from "./components/AboutPage";
 import MainAppBar from "./components/MainAppBar";
 const light = createTheme({
   breakpoints: {
@@ -20,7 +19,7 @@ const light = createTheme({
   palette: {
     mode: "light",
     buttonColor: "#FFFFFF",
-    appBarColor: "green",
+    appBarColor: "#009C41",
   },
 });
 
@@ -34,7 +33,6 @@ const dark = createTheme({
       xl: 1920,
     },
   },
-
   palette: {
     mode: "dark",
     buttonColor: "#272727",

@@ -86,13 +86,17 @@ const MultiChartCompare = ({
   //max up + max up contest
   //max down  + max down contest
   //max rating => implement
-  console.log(contestDetails1, contestDetails2)
+  console.log(contestDetails1, contestDetails2);
   const rows = [
     createData(
       "Current rating",
-      contestDetails1.currentRating,
+      contestDetails1.currentRating === 0
+        ? "N/A"
+        : contestDetails1.currentRating,
       " ",
-      contestDetails2.currentRating
+      contestDetails2.currentRating === 0
+        ? "N/A"
+        : contestDetails2.currentRating
     ),
     createData(
       "Max rating",
@@ -110,68 +114,84 @@ const MultiChartCompare = ({
     //contestLink, rank, contestId, color
     createData(
       "Best rank",
-      createLink(
-        contestDetails1.bestRank.contestLink,
-        contestDetails1.bestRank.rank,
-        contestDetails1.bestRank.contestId,
-        theme.palette.text.primary
-      ),
+      contestDetails1.bestRank.contestLink
+        ? createLink(
+            contestDetails1.bestRank.contestLink,
+            contestDetails1.bestRank.rank,
+            contestDetails1.bestRank.contestId,
+            theme.palette.text.primary
+          )
+        : "N/A",
       " ",
-      createLink(
-        contestDetails2.bestRank.contestLink,
-        contestDetails2.bestRank.rank,
-        contestDetails2.bestRank.contestId,
-        theme.palette.text.primary
-      )
+      contestDetails2.bestRank.contestLink
+        ? createLink(
+            contestDetails2.bestRank.contestLink,
+            contestDetails2.bestRank.rank,
+            contestDetails2.bestRank.contestId,
+            theme.palette.text.primary
+          )
+        : "N/A"
     ),
     createData(
       "Worst rank",
-      createLink(
-        contestDetails1.worstRank.contestLink,
-        contestDetails1.worstRank.rank,
-        contestDetails1.worstRank.contestId,
-        theme.palette.text.primary
-      ),
+      contestDetails1.worstRank.contestLink
+        ? createLink(
+            contestDetails1.worstRank.contestLink,
+            contestDetails1.worstRank.rank,
+            contestDetails1.worstRank.contestId,
+            theme.palette.text.primary
+          )
+        : "N/A",
       " ",
-      createLink(
-        contestDetails2.worstRank.contestLink,
-        contestDetails2.worstRank.rank,
-        contestDetails2.worstRank.contestId,
-        theme.palette.text.primary
-      )
+      contestDetails2.worstRank.contestLink
+        ? createLink(
+            contestDetails2.worstRank.contestLink,
+            contestDetails2.worstRank.rank,
+            contestDetails2.worstRank.contestId,
+            theme.palette.text.primary
+          )
+        : "N/A"
     ),
     createData(
       "Max up",
-      createLink(
-        contestDetails1.maxUp.contestLink,
-        contestDetails1.maxUp.rank,
-        contestDetails1.maxUp.contestId,
-        theme.palette.text.primary
-      ),
+      contestDetails1.maxUp.contestLink
+        ? createLink(
+            contestDetails1.maxUp.contestLink,
+            contestDetails1.maxUp.rank,
+            contestDetails1.maxUp.contestId,
+            theme.palette.text.primary
+          )
+        : "N/A",
       " ",
-      createLink(
-        contestDetails2.maxUp.contestLink,
-        contestDetails2.maxUp.rank,
-        contestDetails2.maxUp.contestId,
-        theme.palette.text.primary
-      )
+      contestDetails2.maxUp.contestLink
+        ? createLink(
+            contestDetails2.maxUp.contestLink,
+            contestDetails2.maxUp.rank,
+            contestDetails2.maxUp.contestId,
+            theme.palette.text.primary
+          )
+        : "N/A"
     ),
     createData(
       "Max Down",
-      createLink(
-        contestDetails1.maxDown.contestLink,
-        contestDetails1.maxDown.rank,
-        contestDetails1.maxDown.contestId,
-        theme.palette.text.primary
-      ),
+      contestDetails1.maxDown.contestLink
+        ? createLink(
+            contestDetails1.maxDown.contestLink,
+            contestDetails1.maxDown.rank,
+            contestDetails1.maxDown.contestId,
+            theme.palette.text.primary
+          )
+        : "N/A",
 
       " ",
-      createLink(
-        contestDetails2.maxDown.contestLink,
-        contestDetails2.maxDown.rank,
-        contestDetails2.maxDown.contestId,
-        theme.palette.text.primary
-      )
+      contestDetails2.maxDown.contestLink
+        ? createLink(
+            contestDetails2.maxDown.contestLink,
+            contestDetails2.maxDown.rank,
+            contestDetails2.maxDown.contestId,
+            theme.palette.text.primary
+          )
+        : "N/A"
     ),
   ];
   console.log(rows);

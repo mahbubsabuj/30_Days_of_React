@@ -64,6 +64,7 @@ export const getContestDetails = (contests) => {
     maxRating: "N/A",
     currentRating: "N/A",
   };
+  console.log(contests.length, "HELLO", contests)
   if (contests.length === 0) return contestPlaceHolder;
   let bestRank = Number.MAX_SAFE_INTEGER,
     worstRank = Number.MIN_SAFE_INTEGER,

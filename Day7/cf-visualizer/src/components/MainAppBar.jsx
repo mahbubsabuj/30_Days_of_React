@@ -85,7 +85,7 @@ const MainAppBar = ({ changeTheme }) => {
           <Brightness4Icon fontSize="large" sx={{ p: 1 }} />
         )}
         <Typography textAlign="center">
-          {theme[0].toUpperCase() + theme.substring(1)}
+          {theme === "light" ? "Dark" : "Light"}
         </Typography>
       </MenuItem>
     </Menu>
@@ -141,7 +141,7 @@ const MainAppBar = ({ changeTheme }) => {
                 <Brightness4Icon fontSize="large" sx={{ p: 1 }} />
               )}
               <Typography textAlign="center">
-                {theme[0].toUpperCase() + theme.substring(1)}
+                {theme === "light" ? "Dark" : "Light"}
               </Typography>
             </MenuItem>
           </Box>
