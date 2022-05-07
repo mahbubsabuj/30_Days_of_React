@@ -3,7 +3,6 @@
 **This is my attempt to learn react basics in 30 days. i will update my progess on daily basis for next 30 days in this repo.**
 
 <hr>
-<hr>
 <h5>Day 1</h5>
 <hr>
 
