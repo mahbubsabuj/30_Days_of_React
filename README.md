@@ -3,7 +3,7 @@
 **This is my attempt to learn react basics in 30 days. i will update my progess on daily basis for next 30 days in this repo.**
 
 <hr>
-<h5>Day 1</h5>
+<h1>Day 1</h1>
 <hr>
 
 <ul>
@@ -15,7 +15,7 @@
   <li> Manage states using Class Component </li>
 </ul>
 
-<h5>Day 2</h5>
+<h1>Day 2</h1>
 <hr>
 
 <ul>
@@ -24,7 +24,7 @@
   <li> HTML Stuffs (Grid Layout & Other stuffs) </li>
 </ul>
 
-<h5>Day 3</h5>
+<h1>Day 3</h1>
 <hr>
 
 <ul>
@@ -32,14 +32,14 @@
   <li> axios Package </li>
 </ul>
 
-<h5>Day 4</h5>
+<h1>Day 4</h1>
 <hr>
 
 <ul>
   <li> useRef, createRef</li>
 </ul>
 
-<h5>Day 5</h5>
+<h1>Day 5</h1>
 <hr>
 
 <ul>
@@ -47,7 +47,7 @@
   <li> Semantic UI </li>
 </ul>
 
-<h5>Day 6</h5>
+<h1>Day 6</h1>
 <hr>
 
 <ul>
@@ -55,7 +55,7 @@
   <li> Material UI Buttons, Forms, Table etc</li>
 </ul>
 
-<h5>Day 7 - 9</h5>
+<h1>Day 7 - 9</h1>
 <hr>
 
 <ul>
@@ -63,7 +63,7 @@
   <li> ChartJS package </li>
 </ul>
 
-<h5>Day 10</h5>
+<h1>Day 10</h1>
 <hr>
 
 <ul>
@@ -71,14 +71,14 @@
   <li> tried apexchart </li>
 </ul>
 
-<h5>Day 11</h5>
+<h1>Day 11</h1>
 <hr>
 
 <ul>
   <li> tried couple of chart packages.</li>
 </ul>
 
-<h5>Day 12 - 13</h5>
+<h1>Day 12 - 13</h1>
 <hr>
 
 <ul> 
@@ -86,14 +86,14 @@
    <li> deployed CFVisualizer into netlify. CFVisualizer : https://cfvisualizer.netlify.app/ </li>
 </ul>
 
-<h5>Day 14 - 17</h5>
+<h1>Day 14 - 17</h1>
 <hr>
 <ul>
   <li> Learned how to / when to use LocalStorage </li>
   <li> learned how to use React hot toaster Package</li>
 </ul>
 
-<h5> Day 18 - 19 </h5>
+<h1> Day 18 - 19 </h1>
 <hr>
 <ul>
   <li> Watched some videos & read some blogs about state management.</li>
