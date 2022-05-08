@@ -98,3 +98,10 @@
 <ul>
   <li> Watched some videos & read some blogs about state management.</li>
 </ul>
+
+<h3> Day 20 </h3>
+<hr>
+<ul>
+  <li> Basics of Chakra UI </li>
+  <li> useCallback Hook </li>
+</ul>
