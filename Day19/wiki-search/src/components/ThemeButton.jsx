@@ -8,7 +8,7 @@ const ThemeButton = ({}) => {
     <IconButton
       aria-label="search"
       onClick={toggleColorMode}
-      icon={colorMode === "light" ? <SunIcon /> : <MoonIcon />}
+      icon={colorMode === "light" ? <MoonIcon /> : <SunIcon />}
     ></IconButton>
   );
 };

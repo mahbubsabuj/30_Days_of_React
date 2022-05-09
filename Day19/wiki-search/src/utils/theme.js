@@ -18,9 +18,9 @@ const theme = extendTheme({
           bg: "red.400",
           boxShadow: "0 0 2px 2px #efdfde",
         },
-        solid: (props) => ({
-          bg: props.colorMode === "dark" ? "red.300" : "red.500",
-        }),
+        // solid: (props) => ({
+        //   bg: props.colorMode === "dark" ? "red.300" : "red.500",
+        // }),
       },
     },
   },
