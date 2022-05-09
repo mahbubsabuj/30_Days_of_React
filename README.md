@@ -105,3 +105,10 @@
   <li> Basics of Chakra UI </li>
   <li> useCallback Hook </li>
 </ul>
+
+<h3> Day 21 </h3>
+<hr>
+
+<ul>
+  <li> Trying to make a MERN Notepad App </li>
+</ul>
